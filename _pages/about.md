@@ -1,13 +1,16 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+I am a 24 year old Electrical Engineering Graduate (Cum Laude) from the University of the Witwatersrand with an interest in AI and machine learning. I love to be challenged when working and this gives me the motivation to always keep learning. My commitment to succeed, fast-learning abilities, tireless work ethic and love for Engineering allows me to work within a challenging field. I am passionate about a dynamic range of topics with a specific interest in AI and intelligent Systems, and applications of these technologies to solve real-world intersectional problems in society.
+
+I am currently studying a Masters degree at Imperial College London. My Masters dissertation is to do with interpretability and explainability in LLMs, supervsed by [Dr. Sonali Parbhoo](https://sites.google.com/view/sonali-parbhoo)
+
 
 A data-driven personal website
 ======
