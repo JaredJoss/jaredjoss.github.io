@@ -25,10 +25,10 @@ author:
   name             : "Your Sidebar Name"
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  location         : "London, UK"
+  employer         : "Imperial College"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "jared.joselowitz23@imperial.ac.uk" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
@@ -43,7 +43,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "jaredjoss"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -57,7 +57,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : jaredjoselowitz
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
