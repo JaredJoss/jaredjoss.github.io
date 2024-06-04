@@ -9,7 +9,7 @@ redirect_from:
 
 I am a 24 year old Electrical Engineering Graduate (Cum Laude) from the University of the Witwatersrand with an interest in AI and machine learning. I love to be challenged when working and this gives me the motivation to always keep learning. My commitment to succeed, fast-learning abilities, tireless work ethic and love for Engineering allows me to work within a challenging field. I am passionate about a dynamic range of topics with a specific interest in AI and intelligent Systems, and applications of these technologies to solve real-world intersectional problems in society.
 
-I am currently studying a Masters degree at Imperial College London. My Masters dissertation is to do with interpretability and explainability in LLMs, supervsed by [Dr. Sonali Parbhoo](https://sites.google.com/view/sonali-parbhoo)
+I am currently studying a Masters degree at Imperial College London. My Masters dissertation is to do with interpretability and explainability in LLMs, supervsed by [Dr. Sonali Parbhoo](https://sites.google.com/view/sonali-parbhoo).
 
 
 A data-driven personal website
