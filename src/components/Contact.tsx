@@ -25,13 +25,13 @@ const Contact = () => {
               href={contact.href}
               target={contact.href.startsWith('http') ? "_blank" : undefined}
               rel={contact.href.startsWith('http') ? "noopener noreferrer" : undefined}
-              className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-secondary/10 hover:shadow-card hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-secondary/20"
+              className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-secondary/10 hover:shadow-card hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-secondary/30"
               aria-label={contact.label}
             >
-              <div className="p-3 rounded-full bg-secondary/5 group-hover:bg-secondary/20 transition-colors">
-                <contact.icon className="w-6 h-6 text-secondary/70 group-hover:text-secondary transition-colors" />
+              <div className="p-3 rounded-full bg-secondary/10 dark:bg-secondary/25 group-hover:bg-secondary/20 dark:group-hover:bg-secondary/40 transition-colors">
+                <contact.icon className="w-6 h-6 text-secondary/70 dark:text-white/90 group-hover:text-secondary dark:group-hover:text-white transition-colors" />
               </div>
-              <span className="text-sm font-medium text-muted-foreground group-hover:text-secondary transition-colors">
+              <span className="text-sm font-medium text-muted-foreground dark:text-foreground/80 group-hover:text-secondary dark:group-hover:text-secondary transition-colors">
                 {contact.label}
               </span>
             </a>
