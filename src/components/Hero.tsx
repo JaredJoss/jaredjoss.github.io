@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-overlay" />
       
       <div className="relative z-10 section-container text-center fade-in">
-        <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6 text-gray-700 dark:text-white drop-shadow-lg">
+        <h1 className="font-heading-option-3 text-5xl md:text-7xl font-bold mb-6 text-gray-700 dark:text-white drop-shadow-lg">
           Jared Joselowitz
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-white/90 mb-12 max-w-2xl mx-auto drop-shadow-md">

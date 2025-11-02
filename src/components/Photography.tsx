@@ -25,7 +25,7 @@ const Photography = () => {
     <section id="photography" className="section-container bg-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-6 fade-in">
-          <h2 className="font-heading text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-secondary to-foreground bg-clip-text text-transparent">
+          <h2 className="font-heading-option-3 text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-secondary to-foreground bg-clip-text text-transparent">
             Photography
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto mb-6"></div>

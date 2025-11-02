@@ -12,7 +12,7 @@ const Contact = () => {
     <section id="contact" className="section-container">
       <div className="max-w-3xl mx-auto text-center">
         <div className="mb-12 fade-in">
-          <h2 className="font-heading text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-secondary to-foreground bg-clip-text text-transparent">
+          <h2 className="font-heading-option-3 text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-secondary to-foreground bg-clip-text text-transparent">
             Contact
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto"></div>

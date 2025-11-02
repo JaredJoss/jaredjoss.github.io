@@ -117,6 +117,43 @@ All colors MUST be HSL.
     background: var(--gradient-overlay);
   }
   
+  /* Heading font options - swap these classes to try different fonts */
+  .font-heading-option-1 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-heading-option-2 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  
+  .font-heading-option-3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -0.015em;
+  }
+  
+  .font-heading-option-4 {
+    font-family: 'Epilogue', sans-serif;
+    letter-spacing: -0.025em;
+  }
+  
+  .font-heading-option-5 {
+    font-family: 'Sora', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  
+  .font-heading-option-6 {
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: -0.01em;
+  }
+  
+  .font-heading-option-7 {
+    font-family: 'Fraunces', serif;
+    letter-spacing: -0.02em;
+    font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  }
+  
   .fade-in {
     animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;

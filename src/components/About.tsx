@@ -6,7 +6,7 @@ const About = () => {
       <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
         <div className="fade-in">
           <div className="mb-6">
-            <h2 className="font-heading text-5xl font-bold mb-3 bg-gradient-to-r from-secondary to-foreground bg-clip-text text-transparent">
+            <h2 className="font-heading-option-3 text-5xl font-bold mb-3 bg-gradient-to-r from-secondary to-foreground bg-clip-text text-transparent">
               About
             </h2>
             <div className="w-16 h-1 bg-secondary"></div>

@@ -45,7 +45,7 @@ const Research = () => {
     <section id="research" className="section-container">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12 fade-in">
-          <h2 className="font-heading text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-secondary to-foreground bg-clip-text text-transparent">
+          <h2 className="font-heading-option-3 text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-secondary to-foreground bg-clip-text text-transparent">
             Publications
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto"></div>
@@ -60,7 +60,7 @@ const Research = () => {
               <CardHeader>
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <CardTitle className="font-heading text-xl mb-2 group-hover:text-secondary transition-colors leading-tight">
+                    <CardTitle className="font-heading-option-3 text-xl mb-2 group-hover:text-secondary transition-colors leading-tight">
                       {paper.title}
                     </CardTitle>
                     <CardDescription className="text-sm font-semibold text-secondary/80">
