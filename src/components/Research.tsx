@@ -44,13 +44,13 @@ const Research = () => {
   return (
     <section id="research" className="section-container">
       <div className="max-w-5xl mx-auto">
-        <h2 className="font-heading text-4xl font-bold mb-12 text-center fade-in">Research</h2>
+        <h2 className="font-heading text-4xl font-bold mb-12 text-center fade-in">Publications</h2>
         
         <div className="grid gap-6 fade-in-delay">
           {papers.map((paper, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-card transition-all duration-300"
+              className="group hover:shadow-card hover:-translate-y-1 hover:bg-secondary/5 transition-all duration-300"
             >
               <CardHeader>
                 <div className="flex items-start justify-between gap-4">
