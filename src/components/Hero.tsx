@@ -22,10 +22,10 @@ const Hero = () => {
       
       <div className="relative z-10 section-container text-center fade-in">
         <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">
-          Alex Chen
+          Jared Joselowitz
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-          AI Research Engineer — exploring how agents learn from context and interaction
+          AI Research Engineer — I work on LLMs in healthcare to design safe and steerable systems that serve real people
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">

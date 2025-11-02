@@ -1,10 +1,10 @@
 import { Mail, Linkedin, Github, GraduationCap } from "lucide-react";
 
 const contacts = [
-  { icon: Mail, href: "mailto:alex.chen@example.com", label: "Email" },
-  { icon: Linkedin, href: "https://linkedin.com/in/alexchen", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com/alexchen", label: "GitHub" },
-  { icon: GraduationCap, href: "https://scholar.google.com/citations?user=example", label: "Google Scholar" },
+  { icon: Mail, href: "mailto:jaredjoss123@gmail.com", label: "Email" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/jaredjoselowitz/", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/JaredJoss", label: "GitHub" },
+  { icon: GraduationCap, href: "https://scholar.google.com/citations?user=1Eh35coAAAAJ&hl=en&oi=ao", label: "Google Scholar" },
 ];
 
 const Contact = () => {
@@ -32,7 +32,6 @@ const Contact = () => {
         </div>
         
         <footer className="text-sm text-muted-foreground fade-in-delay">
-          Built with care — powered by curiosity
         </footer>
       </div>
     </section>

@@ -2,20 +2,20 @@ import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 
-import wildlife1 from "@/assets/wildlife-1.jpg";
-import wildlife2 from "@/assets/wildlife-2.jpg";
-import wildlife3 from "@/assets/wildlife-3.jpg";
-import wildlife4 from "@/assets/wildlife-4.jpg";
-import wildlife5 from "@/assets/wildlife-5.jpg";
-import wildlife6 from "@/assets/wildlife-6.jpg";
+import wildlife1 from "@/assets/wildlife-1.jpeg";
+import wildlife2 from "@/assets/wildlife-2.jpeg";
+import wildlife3 from "@/assets/wildlife-3.jpeg";
+import wildlife4 from "@/assets/wildlife-4.jpeg";
+import wildlife5 from "@/assets/wildlife-5.jpeg";
+import wildlife6 from "@/assets/wildlife-6.jpeg";
 
 const photos = [
-  { src: wildlife1, caption: "Sunrise patience", alt: "Leopard on tree branch at sunrise" },
-  { src: wildlife2, caption: "Quiet wanderer", alt: "Elephant silhouette at dawn" },
-  { src: wildlife3, caption: "Vibrant focus", alt: "Kingfisher bird on branch" },
-  { src: wildlife4, caption: "Freedom in flight", alt: "Eagle soaring in sky" },
-  { src: wildlife5, caption: "Winter's observer", alt: "Fox in snow" },
-  { src: wildlife6, caption: "Golden gathering", alt: "Deer herd at sunset" },
+  { src: wildlife1, caption: "Natural patterns", alt: "Close-up of zebra stripes in monochrome" },
+  { src: wildlife2, caption: "Jewel of the river", alt: "Malachite kingfisher perched on riverbank rock" },
+  { src: wildlife3, caption: "Young king", alt: "Portrait of a young male lion with golden mane" },
+  { src: wildlife4, caption: "Curious eyes", alt: "Baby baboon close-up portrait with expressive face" },
+  { src: wildlife5, caption: "Ancient predator", alt: "Nile crocodile resting in shallow water" },
+  { src: wildlife6, caption: "Elusive beauty", alt: "Leopard resting among vegetation in natural habitat" },
 ];
 
 const Photography = () => {

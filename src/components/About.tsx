@@ -1,4 +1,4 @@
-import profileImg from "@/assets/profile.jpg";
+import profileImg from "@/assets/profile.jpeg";
 
 const About = () => {
   return (
@@ -7,7 +7,7 @@ const About = () => {
         <div className="fade-in">
           <h2 className="font-heading text-4xl font-bold mb-6">About</h2>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            I build and study AI systems that learn from context — training agents to understand and adapt through interaction. My research focuses on contextual learning, multi-agent systems, and the emergence of intelligent behavior. Outside of research, I spend time in the field photographing wildlife — a reminder that perception and adaptation are deeply human and natural. Both pursuits teach me about intelligence: one through code, the other through observation.
+            I design and study large language models for healthcare applications, with a focus on reliability, interpretability, and safety. My research aims to make AI systems that clinicians can understand and trust — advancing both performance and accountability. I'm particularly interested in steerable LLMs that adapt to context while maintaining alignment with human values.
           </p>
         </div>
         
@@ -15,7 +15,7 @@ const About = () => {
           <div className="aspect-square rounded-lg overflow-hidden shadow-card">
             <img 
               src={profileImg} 
-              alt="Alex Chen" 
+              alt="Jared Joselowitz" 
               className="w-full h-full object-cover"
             />
           </div>

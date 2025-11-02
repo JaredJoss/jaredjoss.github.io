@@ -49,7 +49,7 @@ const Navigation = () => {
           }}
           className="font-heading text-xl font-bold hover:text-secondary transition-colors"
         >
-          AC
+          JJ
         </a>
         
         <div className="hidden md:flex items-center gap-8">

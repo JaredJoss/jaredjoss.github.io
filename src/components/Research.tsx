@@ -1,34 +1,42 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const papers = [
   {
-    title: "Context-Aware Multi-Agent Learning in Dynamic Environments",
-    conference: "NeurIPS 2025",
-    description: "Novel approach to adaptive agent behavior using contextual embeddings",
-    pdfUrl: "#",
-    githubUrl: "#",
+    title: "Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning",
+    conference: "COLM 2025",
+    description: "Understanding how LLM reward models can be reverse-engineered using inverse reinforcement learning to improve interpretability and alignment.",
+    pdfUrl: "https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:9yKSN-GCB0IC",
   },
   {
-    title: "Emergent Communication Through Interaction",
-    conference: "ICLR 2025",
-    description: "Studying how agents develop shared protocols through environmental interaction",
-    pdfUrl: "#",
-    githubUrl: "#",
+    title: "ASTRID — An Automated and Scalable TRIaD for the Evaluation of RAG-based Clinical Question Answering Systems",
+    conference: "ACL 2025 (Findings)",
+    description: "Framework for evaluating retrieval-augmented generation (RAG) systems in clinical QA, focusing on safety, reliability, and scalability.",
+    pdfUrl: "https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:UeHWp8X0CEIC",
   },
   {
-    title: "Hierarchical Attention Mechanisms for Long-Context Learning",
-    conference: "ICML 2024",
-    description: "Efficient attention architectures for processing extended contextual information",
-    pdfUrl: "#",
-    githubUrl: "#",
+    title: "Video Selection for Enjoyable Learning",
+    conference: "CICE 2024",
+    description: "Data-driven approach to optimizing educational video selection for improved learner engagement and enjoyment.",
+    pdfUrl: "https://scholar.google.com/citations?user=1Eh35coAAAAJ",
   },
   {
-    title: "Transfer Learning in Multi-Agent Systems",
-    conference: "AAMAS 2024",
-    description: "Cross-domain knowledge transfer for collaborative agent training",
-    pdfUrl: "#",
-    githubUrl: "#",
+    title: "On Presenters and Commenters in YouTube Climate Change Videos",
+    conference: "ECSM 2024",
+    description: "Analyzing how presenter style and audience interaction influence public engagement with climate change communication.",
+    pdfUrl: "https://papers.academic-conferences.org/index.php/ecsm/article/view/2076",
+  },
+  {
+    title: "Video Features Predicting Engagement in Climate Change Education",
+    conference: "E3S Web of Conferences 2023",
+    description: "Identifying which visual and content features in educational videos drive audience engagement and retention.",
+    pdfUrl: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Eh35coAAAAJ&citation_for_view=1Eh35coAAAAJ:u-x6o8ySG0sC",
+  },
+  {
+    title: "Collaborative Learning in YouTube: Under Which Conditions Can Learning Happen or Fail to Happen?",
+    conference: "CSCL 2022",
+    description: "Studying online collaborative learning dynamics to understand when and how digital discussions foster real learning outcomes.",
+    pdfUrl: "https://repository.isls.org/handle/1/8363",
   },
 ];
 
@@ -57,17 +65,12 @@ const Research = () => {
                   <div className="flex gap-2">
                     <a 
                       href={paper.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="p-2 hover:bg-muted rounded-lg transition-colors"
-                      aria-label="View PDF"
+                      aria-label="View Paper"
                     >
                       <ExternalLink className="w-4 h-4" />
-                    </a>
-                    <a 
-                      href={paper.githubUrl}
-                      className="p-2 hover:bg-muted rounded-lg transition-colors"
-                      aria-label="View on GitHub"
-                    >
-                      <Github className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
