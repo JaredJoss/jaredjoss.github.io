@@ -11,9 +11,22 @@ const navItems = [
 ];
 
 const Navigation = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    // Set dark mode by default on mount
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = savedTheme === 'dark' || (!savedTheme);
+    
+    setIsDark(prefersDark);
+    if (prefersDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,8 +37,16 @@ const Navigation = () => {
   }, []);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    
+    if (newIsDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
   };
 
   const handleNavClick = (href: string) => {

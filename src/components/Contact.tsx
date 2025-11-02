@@ -18,8 +18,8 @@ const Contact = () => {
             <a
               key={index}
               href={contact.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={contact.href.startsWith('http') ? "_blank" : undefined}
+              rel={contact.href.startsWith('http') ? "noopener noreferrer" : undefined}
               className="flex flex-col items-center gap-2 p-6 rounded-lg hover:bg-muted transition-colors group"
               aria-label={contact.label}
             >

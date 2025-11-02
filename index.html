@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jared Joselowitz — AI Research Engineer</title>
+    
+    <!-- Set dark mode immediately to prevent flash -->
+    <script>
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || !theme) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
     <meta name="description" content="AI Research Engineer working on LLMs in healthcare to design safe and steerable systems that serve real people. Wildlife photographer." />
     <meta name="author" content="Jared Joselowitz" />
 
