@@ -15,5 +15,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: mode === "production" ? "/jared-joselowitz-personal-website/" : "/",
+  base: mode === "production" ? "/jaredjoss.github.io/" : "/",
 }));
