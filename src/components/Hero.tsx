@@ -33,15 +33,15 @@ const Hero = () => {
             size="lg" 
             variant="default"
             onClick={() => scrollToSection('research')}
-            className="min-w-[160px]"
+            className="min-w-[180px] font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
-            Research
+            Publications
           </Button>
           <Button 
             size="lg" 
             variant="secondary"
             onClick={() => scrollToSection('photography')}
-            className="min-w-[160px]"
+            className="min-w-[180px] font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
             Photography
           </Button>

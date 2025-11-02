@@ -10,7 +10,7 @@ const papers = [
   },
   {
     title: "ASTRID — An Automated and Scalable TRIaD for the Evaluation of RAG-based Clinical Question Answering Systems",
-    conference: "ACL 2025 (Findings)",
+    conference: "ACL 2025",
     description: "Framework for evaluating retrieval-augmented generation (RAG) systems in clinical QA, focusing on safety, reliability, and scalability.",
     pdfUrl: "https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:UeHWp8X0CEIC",
   },
@@ -44,21 +44,26 @@ const Research = () => {
   return (
     <section id="research" className="section-container">
       <div className="max-w-5xl mx-auto">
-        <h2 className="font-heading text-4xl font-bold mb-12 text-center fade-in">Publications</h2>
+        <div className="text-center mb-12 fade-in">
+          <h2 className="font-heading text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-secondary to-foreground bg-clip-text text-transparent">
+            Publications
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto"></div>
+        </div>
         
         <div className="grid gap-6 fade-in-delay">
           {papers.map((paper, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-card hover:-translate-y-1 hover:bg-secondary/5 transition-all duration-300"
+              className="group hover:shadow-card hover:-translate-y-1 hover:bg-secondary/5 transition-all duration-300 border-l-4 border-l-transparent hover:border-l-secondary"
             >
               <CardHeader>
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <CardTitle className="font-heading text-xl mb-2 group-hover:text-secondary transition-colors">
+                    <CardTitle className="font-heading text-xl mb-2 group-hover:text-secondary transition-colors leading-tight">
                       {paper.title}
                     </CardTitle>
-                    <CardDescription className="text-sm font-medium">
+                    <CardDescription className="text-sm font-semibold text-secondary/80">
                       {paper.conference}
                     </CardDescription>
                   </div>
@@ -67,10 +72,10 @@ const Research = () => {
                       href={paper.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 hover:bg-muted rounded-lg transition-colors"
+                      className="p-2 hover:bg-secondary/10 hover:text-secondary rounded-lg transition-colors"
                       aria-label="View Paper"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-5 h-5" />
                     </a>
                   </div>
                 </div>

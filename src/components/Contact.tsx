@@ -11,7 +11,12 @@ const Contact = () => {
   return (
     <section id="contact" className="section-container">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="font-heading text-4xl font-bold mb-12 fade-in">Contact</h2>
+        <div className="mb-12 fade-in">
+          <h2 className="font-heading text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-secondary to-foreground bg-clip-text text-transparent">
+            Contact
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto"></div>
+        </div>
         
         <div className="flex flex-wrap items-center justify-center gap-6 mb-12 fade-in-delay">
           {contacts.map((contact, index) => (
@@ -20,11 +25,13 @@ const Contact = () => {
               href={contact.href}
               target={contact.href.startsWith('http') ? "_blank" : undefined}
               rel={contact.href.startsWith('http') ? "noopener noreferrer" : undefined}
-              className="flex flex-col items-center gap-2 p-6 rounded-lg hover:bg-muted transition-colors group"
+              className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-secondary/10 hover:shadow-card hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-secondary/20"
               aria-label={contact.label}
             >
-              <contact.icon className="w-6 h-6 group-hover:text-secondary transition-colors" />
-              <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <div className="p-3 rounded-full bg-secondary/5 group-hover:bg-secondary/20 transition-colors">
+                <contact.icon className="w-6 h-6 text-secondary/70 group-hover:text-secondary transition-colors" />
+              </div>
+              <span className="text-sm font-medium text-muted-foreground group-hover:text-secondary transition-colors">
                 {contact.label}
               </span>
             </a>
