@@ -21,10 +21,10 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-overlay" />
       
       <div className="relative z-10 section-container text-center fade-in">
-        <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">
+        <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6 text-gray-700 dark:text-white drop-shadow-lg">
           Jared Joselowitz
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto drop-shadow-md">
+        <p className="text-xl md:text-2xl text-gray-600 dark:text-white/90 mb-12 max-w-2xl mx-auto drop-shadow-md">
           AI Research Engineer — I work on LLMs in healthcare to design safe and steerable systems that serve real people
         </p>
         
@@ -50,7 +50,7 @@ const Hero = () => {
         <a 
           href="/cv.pdf" 
           download
-          className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors drop-shadow-md"
+          className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-white/80 hover:text-gray-800 dark:hover:text-white transition-colors drop-shadow-md"
         >
           <Download className="w-4 h-4" />
           Download CV
