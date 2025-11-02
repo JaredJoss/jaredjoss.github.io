@@ -39,3 +39,22 @@ React + TypeScript + Vite + Tailwind CSS + shadcn/ui
 npm install
 npm run dev
 ```
+
+## Deployment
+
+This site is configured for GitHub Pages with automatic deployment.
+
+### Setup GitHub Pages
+
+1. Go to your repository Settings > Pages
+2. Under "Build and deployment", select:
+   - **Source**: GitHub Actions
+3. Push to the `main` branch to trigger automatic deployment
+
+### Manual Deployment
+
+```bash
+npm run deploy
+```
+
+**Note**: If using a custom domain or `username.github.io`, update the `base` path in `vite.config.ts` to `"/"` instead of `"/jared-joselowitz-personal-website/"`
