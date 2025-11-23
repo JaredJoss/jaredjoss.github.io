@@ -1,0 +1,46 @@
+# Jared Joselowitz - Comprehensive Portfolio
+
+## Professional Profile
+I am an AI Research Engineer with an MSc in Applied Machine Learning (Distinction) from Imperial College London. I specialize in deploying Large Language Models (LLMs) in high-stakes clinical domains. My work focuses on reliability, steerability, and safety, moving beyond standard benchmarks to solve real-world challenges in healthcare.
+
+## Education
+- **MSc Applied Machine Learning** (Distinction) | Imperial College London (2023-2024)
+  - Specialization: Deep Learning, Reinforcement Learning, Large Dimensional Data Processing.
+- **BSc Electrical (Information) Engineering** (Distinction) | University of the Witwatersrand (2018-2021)
+  - Top 5 in 3rd year; 1st place in 4th year (Entelect Prize).
+
+## Work Experience
+- **Senior AI Research Engineer @ Ufonia** (London, 2025-Present)
+  - Developing LLM-based conversational systems for automated postoperative follow-up.
+  - Benchmarking multilingual LLMs and improving evaluation pipelines for clinical safety.
+- **Junior Data Scientist @ The Awareness Company** (South Africa, 2022-2023)
+  - Built computer vision models for anti-poaching (identifying high-risk areas in Kafue National Park) and fine-tuned LLM chatbots using Azure OpenAI.
+
+## Detailed Research & Publications
+
+### Primary Research: LLM Safety & Healthcare
+
+**1. Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning**
+- **Venue:** COLM 2025
+- **Tech Stack:** TRL, Hugging Face, Pythia (70M/410M), RLHF.
+- **Key Findings:** Developed a max-margin Inverse Reinforcement Learning (IRL) algorithm to extract reward models from fine-tuned LLMs.
+  - The algorithm achieved **80.40% accuracy** in recovering the ground-truth objective.
+  - Demonstrated that fine-tuning with the extracted IRL reward model resulted in **lower toxicity** than the original RLHF process.
+- **Link:** https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:9yKSN-GCB0IC
+
+**2. ASTRID — An Automated and Scalable TRIaD for the Evaluation of RAG-based Clinical Question Answering Systems**
+- **Venue:** ACL 2025
+- **Focus:** RAG Evaluation, Clinical QA, Reliability.
+- **Summary:** A framework designed to evaluate Retrieval-Augmented Generation systems in clinical settings, focusing on safety, reliability, and scalability.
+- **Link:** https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:UeHWp8X0CEIC
+
+### Previous Research: Multimedia & Education
+- **Video Selection for Enjoyable Learning** (CICE 2024)
+- **On Presenters and Commenters in YouTube Climate Change Videos** (ECSM 2024)
+- **Video Features Predicting Engagement in Climate Change Education** (E3S 2023)
+- **Collaborative Learning in YouTube** (CSCL 2022)
+
+## Contact Information
+- **Email:** jaredjoss123@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/jaredjoselowitz/
+- **GitHub:** https://github.com/JaredJoss

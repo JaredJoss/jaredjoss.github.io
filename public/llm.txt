@@ -1,0 +1,30 @@
+# Jared Joselowitz
+- Role: Senior AI Research Engineer
+- Focus: LLMs, Healthcare, Safety, Steerability, Inverse Reinforcement Learning (IRL)
+- Education: MSc Applied Machine Learning (Distinction), Imperial College London
+- Website: https://jaredjoss.github.io/
+
+## Bio
+Senior AI Research Engineer (MSc, Imperial College London) designing safe and steerable LLMs for healthcare. Specializes in using Inverse Reinforcement Learning (IRL) to extract reward models and evaluating clinical RAG systems. Currently building automated postoperative follow-up systems at Ufonia.
+
+## Technical Skills
+- Frameworks: PyTorch, TensorFlow, Hugging Face (TRL, Transformers), LangChain, DSPy, LLM Optimizers (GEPA, MIPROV2, BootstrapFewShot).
+- Cloud/Deploy: Azure OpenAI Service, AWS (Lambda, SageMaker), Docker.
+- Core Concepts: RLHF, SFT, Reward Modeling, RAG, Computer Vision, Inverse RL.
+
+## Key Links
+- [CV (PDF)](https://jaredjoss.github.io/cv.pdf)
+- [GitHub](https://github.com/JaredJoss)
+- [Google Scholar](https://scholar.google.com/citations?user=1Eh35coAAAAJ&hl=en)
+- [LinkedIn](https://www.linkedin.com/in/jaredjoselowitz/)
+
+## Selected Research (LLMs & Healthcare)
+- **Insights from the Inverse (COLM 2025)**: Reconstructing LLM training goals through Inverse RL. Achieved 80.4% accuracy in reward model extraction.
+  - Link: https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:9yKSN-GCB0IC
+- **ASTRID (ACL 2025)**: Automated evaluation framework for RAG-based Clinical Question Answering systems.
+  - Link: https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:UeHWp8X0CEIC
+
+## Previous Research (Social Computing)
+- **Video Selection for Enjoyable Learning (CICE 2024)**
+- **Presenters in YouTube Climate Change Videos (ECSM 2024)**
+- **Engagement in Climate Change Education (E3S 2023)**
