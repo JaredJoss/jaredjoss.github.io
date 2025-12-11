@@ -154,23 +154,23 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="h-screen relative flex flex-col">
-        <main className="px-4 sm:px-8 pt-12 sm:pt-32 pb-12 sm:pb-20 max-w-2xl flex-1 overflow-hidden">
+        <main className="px-4 sm:px-8 pt-12 sm:pt-32 pb-14 sm:pb-20 max-w-2xl flex-1">
           {/* Introduction */}
-          <div className="space-y-1 mb-4 sm:mb-8">
-            <p className="text-muted-foreground text-sm sm:text-base">
+          <div className="space-y-0.5 sm:space-y-1 mb-3 sm:mb-8">
+            <p className="text-muted-foreground text-xs sm:text-base">
               <ScrambleText text="howzit, i'm" />
             </p>
-            <h1 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+            <h1 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
               <ScrambleText text="jared joselowitz" />
             </h1>
-            <div className="flex items-center gap-2 text-primary text-sm sm:text-base">
+            <div className="flex items-center gap-2 text-primary text-xs sm:text-base">
               <span className="animate-blink">{">"}</span>
               <CyclingScrambleText texts={TITLES} interval={3500} />
             </div>
           </div>
 
           {/* Experience */}
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-3 sm:space-y-6">
             {/* Currently */}
             <div className="space-y-1 sm:space-y-2">
               <p className="text-muted-foreground text-sm">
@@ -223,7 +223,7 @@ const Index = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center flex-wrap gap-4 sm:gap-6 pt-3 sm:pt-4 text-sm sm:text-base">
+            <div className="flex items-center flex-wrap gap-3 sm:gap-6 pt-2 sm:pt-4 text-xs sm:text-base">
               <SocialLink label="email" href="mailto:jaredjoss123@gmail.com" />
               <SocialLink label="linkedin" href="https://www.linkedin.com/in/jaredjoselowitz/" />
               <SocialLink label="github" href="https://github.com/JaredJoss" />

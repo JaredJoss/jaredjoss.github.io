@@ -9,7 +9,7 @@ interface ExperienceItemProps {
 
 const ExperienceItem = ({ role, company, companyIcon, companyUrl }: ExperienceItemProps) => {
   return (
-    <div className="flex items-center gap-1.5 sm:gap-2 text-foreground text-sm sm:text-base flex-wrap">
+    <div className="flex items-center gap-1.5 sm:gap-2 text-foreground text-xs sm:text-base flex-wrap">
       <ScrambleText text={role} className="text-foreground" />
       <span className="text-muted-foreground">at</span>
       {companyIcon && (
