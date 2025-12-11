@@ -154,7 +154,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen relative flex flex-col">
-        <main className="px-4 sm:px-8 pt-24 sm:pt-32 pb-20 sm:pb-20 max-w-2xl flex-1">
+        <main className="px-4 sm:px-8 pt-20 sm:pt-32 pb-32 sm:pb-20 max-w-2xl flex-1">
           {/* Introduction */}
           <div className="space-y-1 mb-6 sm:mb-8">
             <p className="text-muted-foreground text-sm sm:text-base">
@@ -170,7 +170,7 @@ const Index = () => {
           </div>
 
           {/* Experience */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Currently */}
             <div className="space-y-2">
               <p className="text-muted-foreground text-sm">
@@ -223,7 +223,7 @@ const Index = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center flex-wrap gap-4 sm:gap-6 pt-4 text-sm sm:text-base">
+            <div className="flex items-center flex-wrap gap-4 sm:gap-6 pt-3 sm:pt-4 text-sm sm:text-base">
               <SocialLink label="email" href="mailto:jaredjoss123@gmail.com" />
               <SocialLink label="linkedin" href="https://www.linkedin.com/in/jaredjoselowitz/" />
               <SocialLink label="github" href="https://github.com/JaredJoss" />
@@ -233,7 +233,7 @@ const Index = () => {
         </main>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 sm:bottom-8 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2">
           <button 
             onClick={scrollToAbout}
             className="text-muted-foreground hover:text-primary transition-colors animate-bounce-slow"
