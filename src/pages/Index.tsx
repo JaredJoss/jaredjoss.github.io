@@ -154,7 +154,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="h-screen relative flex flex-col">
-        <main className="px-4 sm:px-8 pt-12 sm:pt-32 pb-14 sm:pb-20 max-w-2xl flex-1">
+        <main className="px-4 sm:px-8 pt-12 sm:pt-32 pb-24 sm:pb-20 max-w-2xl flex-1">
           {/* Introduction */}
           <div className="space-y-0.5 sm:space-y-1 mb-3 sm:mb-8">
             <p className="text-muted-foreground text-xs sm:text-base">
@@ -170,9 +170,9 @@ const Index = () => {
           </div>
 
           {/* Experience */}
-          <div className="space-y-3 sm:space-y-6">
+          <div className="space-y-5 sm:space-y-6">
             {/* Currently */}
-            <div className="space-y-1 sm:space-y-2">
+            <div className="space-y-2 sm:space-y-2">
               <p className="text-muted-foreground text-sm">
                 <ScrambleText text="currently" />
               </p>
@@ -185,7 +185,7 @@ const Index = () => {
             </div>
 
             {/* Previously */}
-            <div className="space-y-1 sm:space-y-2">
+            <div className="space-y-2 sm:space-y-2">
               <p className="text-muted-foreground text-sm">
                 <ScrambleText text="previously" />
               </p>
@@ -204,7 +204,7 @@ const Index = () => {
             </div>
 
             {/* Education */}
-            <div className="space-y-1 sm:space-y-2">
+            <div className="space-y-2 sm:space-y-2">
               <p className="text-muted-foreground text-sm">
                 <ScrambleText text="education" />
               </p>
