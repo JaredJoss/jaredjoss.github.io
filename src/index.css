@@ -1,95 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 160 25% 20%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
 
-    --card: 40 15% 98%;
-    --card-foreground: 160 25% 20%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 40 15% 98%;
-    --popover-foreground: 160 25% 20%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 160 25% 20%;
-    --primary-foreground: 40 20% 97%;
+    --primary: 174 72% 56%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 160 20% 55%;
-    --secondary-foreground: 40 20% 97%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 10% 90%;
-    --muted-foreground: 160 15% 40%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 210 20% 50%;
-    --accent-foreground: 40 20% 97%;
+    --accent: 174 72% 56%;
+    --accent-foreground: 0 0% 4%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 40 20% 97%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 40 10% 88%;
-    --input: 40 10% 88%;
-    --ring: 160 20% 55%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 174 72% 56%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom tokens for natural design */
-    --sage: 160 20% 55%;
-    --slate: 210 20% 50%;
-    --warm-bg: 40 20% 97%;
-    --deep-green: 160 25% 20%;
-    
-    /* Gradients */
-    --gradient-natural: linear-gradient(135deg, hsl(40 20% 97%) 0%, hsl(160 10% 95%) 100%);
-    --gradient-overlay: linear-gradient(180deg, hsl(40 20% 97% / 0.2) 0%, hsl(40 20% 97% / 0.7) 100%);
-    
-    /* Shadows */
-    --shadow-soft: 0 2px 20px hsl(160 20% 20% / 0.08);
-    --shadow-card: 0 4px 30px hsl(160 20% 20% / 0.12);
-    
-    /* Transitions */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 174 72% 56%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 174 72% 56%;
   }
 
   .dark {
-    --background: 160 20% 12%;
-    --foreground: 40 20% 95%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
 
-    --card: 160 15% 15%;
-    --card-foreground: 40 20% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 160 15% 15%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 160 20% 55%;
-    --primary-foreground: 160 20% 12%;
+    --primary: 174 72% 56%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 160 15% 25%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 160 10% 20%;
-    --muted-foreground: 160 10% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 210 20% 50%;
-    --accent-foreground: 40 20% 95%;
+    --accent: 174 72% 56%;
+    --accent-foreground: 0 0% 4%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 40 20% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 160 10% 22%;
-    --input: 160 10% 22%;
-    --ring: 160 20% 55%;
-    
-    --gradient-natural: linear-gradient(135deg, hsl(160 20% 12%) 0%, hsl(160 15% 15%) 100%);
-    --gradient-overlay: linear-gradient(180deg, hsl(160 20% 12% / 0.4) 0%, hsl(160 20% 12% / 0.85) 100%);
-    
-    --shadow-soft: 0 2px 20px hsl(0 0% 0% / 0.3);
-    --shadow-card: 0 4px 30px hsl(0 0% 0% / 0.4);
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 174 72% 56%;
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 174 72% 56%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 174 72% 56%;
   }
 }
 
@@ -98,80 +91,84 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "liga" 1, "calt" 1;
-  }
-  
   html {
-    scroll-behavior: smooth;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'JetBrains Mono', monospace;
   }
 }
 
-@layer components {
-  .section-container {
-    @apply max-w-6xl mx-auto px-6 md:px-12 py-20 md:py-32;
+/* Custom cursor blink animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
   }
-  
-  .bg-gradient-overlay {
-    background: var(--gradient-overlay);
-  }
-  
-  /* Heading font options - swap these classes to try different fonts */
-  .font-heading-option-1 {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.02em;
-  }
-  
-  .font-heading-option-2 {
-    font-family: 'Outfit', sans-serif;
-    letter-spacing: -0.01em;
-  }
-  
-  .font-heading-option-3 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    letter-spacing: -0.015em;
-  }
-  
-  .font-heading-option-4 {
-    font-family: 'Epilogue', sans-serif;
-    letter-spacing: -0.025em;
-  }
-  
-  .font-heading-option-5 {
-    font-family: 'Sora', sans-serif;
-    letter-spacing: -0.01em;
-  }
-  
-  .font-heading-option-6 {
-    font-family: 'DM Serif Display', serif;
-    letter-spacing: -0.01em;
-  }
-  
-  .font-heading-option-7 {
-    font-family: 'Fraunces', serif;
-    letter-spacing: -0.02em;
-    font-variation-settings: 'SOFT' 100, 'WONK' 1;
-  }
-  
-  .fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+  51%, 100% {
     opacity: 0;
   }
-  
-  .fade-in-delay {
-    animation: fadeIn 0.8s ease-out 0.3s forwards;
-    opacity: 0;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Subtle glow effect for primary elements */
+.glow-primary {
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+/* Link hover transition */
+.link-hover {
+  @apply transition-all duration-200 ease-out;
+}
+
+.link-hover:hover {
+  @apply text-primary;
+  text-shadow: 0 0 8px hsl(var(--primary) / 0.4);
+}
+
+/* Scroll indicator bounce animation */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  50% {
+    transform: translateY(8px);
   }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Section left border accent */
+.section-border-left {
+  border-left: 2px solid hsl(var(--primary));
+  padding-left: 1.5rem;
+}
+
+/* Publication card hover */
+.publication-card {
+  @apply bg-card/50 border border-border/50 rounded-lg p-6 transition-all duration-300;
+}
+
+.publication-card:hover {
+  @apply border-primary/30 bg-card/80;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+}
+
+/* Photo card */
+.photo-card {
+  @apply relative overflow-hidden rounded-lg;
+}
+
+.photo-card img {
+  @apply transition-transform duration-500;
+}
+
+.photo-card:hover img {
+  @apply scale-105;
 }

@@ -1,60 +1,73 @@
-# Jared Joselowitz - Personal Website
+# Welcome to your Lovable project
 
-Personal website showcasing AI research, publications, and wildlife photography.
+## Project info
 
-## Project Structure
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-```
-src/
-├── components/          # React components
-│   ├── Hero.tsx        # Landing section with name and bio
-│   ├── About.tsx       # About section with description
-│   ├── Research.tsx    # Publications list with links
-│   ├── Photography.tsx # Wildlife photography gallery
-│   ├── Contact.tsx     # Social links (email, LinkedIn, GitHub, Google Scholar)
-│   └── Navigation.tsx  # Top navigation bar
-├── assets/             # Images (profile, wildlife photos, hero background)
-├── pages/              # Page components
-└── main.tsx           # App entry point
+## How can I edit this code?
 
-public/
-└── cv.pdf             # Downloadable CV
-```
+There are several ways of editing your application.
 
-## Key Sections
+**Use Lovable**
 
-- **Hero**: Name, tagline, quick navigation
-- **About**: Professional bio focused on healthcare LLM research
-- **Research**: 6 publications spanning 2022-2025
-- **Photography**: Wildlife photography gallery with modal view
-- **Contact**: Social media and professional links
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-## Tech Stack
+Changes made via Lovable will be committed automatically to this repo.
 
-React + TypeScript + Vite + Tailwind CSS + shadcn/ui
+**Use your preferred IDE**
 
-## Development
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-```bash
-npm install
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-## Deployment
+**Edit a file directly in GitHub**
 
-This site is configured for GitHub Pages with automatic deployment.
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-### Setup GitHub Pages
+**Use GitHub Codespaces**
 
-1. Go to your repository Settings > Pages
-2. Under "Build and deployment", select:
-   - **Source**: GitHub Actions
-3. Push to the `main` branch to trigger automatic deployment
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-### Manual Deployment
+## What technologies are used for this project?
 
-```bash
-npm run deploy
-```
+This project is built with:
 
-**Note**: If using a custom domain or `username.github.io`, update the `base` path in `vite.config.ts` to `"/"` instead of `"/jared-joselowitz-personal-website/"`
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
