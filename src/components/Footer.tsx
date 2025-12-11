@@ -79,24 +79,24 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="absolute bottom-0 left-0 right-0 px-4 sm:px-8 py-4 sm:py-6 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 sm:gap-0 text-xs sm:text-sm">
-      <div className="space-y-1 max-w-full overflow-hidden">
+    <footer className="absolute bottom-0 left-0 right-0 px-4 sm:px-8 py-3 sm:py-6 flex flex-row justify-between items-end gap-2 sm:gap-0 text-xs sm:text-sm">
+      <div className="space-y-0.5 sm:space-y-1 max-w-full overflow-hidden flex-1">
         {track && (
-          <div className="space-y-1 group/song">
-            <div className="text-muted-foreground text-xs opacity-0 group-hover/song:opacity-100 transition-opacity duration-200">
+          <div className="space-y-0.5 sm:space-y-1 group/song">
+            <div className="text-muted-foreground text-xs opacity-0 group-hover/song:opacity-100 transition-opacity duration-200 hidden sm:block">
               {track.nowPlaying ? "playing now" : track.timestamp ? `last song - ${getTimeAgo(track.timestamp)}` : ""}
             </div>
-            <div className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground flex-wrap">
-              <span className="text-foreground">{track.nowPlaying ? "♪" : "♫"}</span>
-              <span className="truncate max-w-[120px] sm:max-w-none">
+            <div className="flex items-center gap-1 sm:gap-2 text-muted-foreground flex-wrap">
+              <span className="text-foreground shrink-0">{track.nowPlaying ? "♪" : "♫"}</span>
+              <span className="truncate max-w-[90px] sm:max-w-none">
                 <ScrambleText text={track.name.toLowerCase()} />
               </span>
-              <span className="shrink-0">by</span>
+              <span className="shrink-0 text-[10px] sm:text-xs">by</span>
               <a 
                 href={track.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground link-hover truncate max-w-[100px] sm:max-w-none"
+                className="text-foreground link-hover truncate max-w-[70px] sm:max-w-none"
               >
                 <ScrambleText text={track.artist.toLowerCase()} />
               </a>
@@ -112,8 +112,8 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="text-left sm:text-right space-y-1 group/visits shrink-0">
-        <div className="text-muted-foreground text-xs opacity-0 group-hover/visits:opacity-100 transition-opacity duration-200">
+      <div className="text-right space-y-0.5 sm:space-y-1 group/visits shrink-0">
+        <div className="text-muted-foreground text-xs opacity-0 group-hover/visits:opacity-100 transition-opacity duration-200 hidden sm:block">
           visits
         </div>
         <div className="text-muted-foreground">
