@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ExperienceItem from "@/components/ExperienceItem";
 import SocialLink from "@/components/SocialLink";
 import Footer from "@/components/Footer";
@@ -132,24 +132,10 @@ const PHOTOS = [
 
 const Index = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [showFooter, setShowFooter] = useState(true);
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
-
-  // Hide footer on mobile when scrolling past hero section
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerWidth < 640) { // mobile only
-        const heroHeight = window.innerHeight;
-        setShowFooter(window.scrollY < heroHeight - 100);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="bg-background text-foreground font-mono">
@@ -167,8 +153,8 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="min-h-screen relative flex flex-col">
-        <main className="px-4 sm:px-8 pt-16 sm:pt-32 pb-16 sm:pb-20 max-w-2xl flex-1">
+      <section className="h-screen relative flex flex-col">
+        <main className="px-4 sm:px-8 pt-12 sm:pt-32 pb-12 sm:pb-20 max-w-2xl flex-1 overflow-hidden">
           {/* Introduction */}
           <div className="space-y-1 mb-4 sm:mb-8">
             <p className="text-muted-foreground text-sm sm:text-base">
@@ -271,7 +257,7 @@ const Index = () => {
         <div className="sm:hidden absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/50 to-transparent pointer-events-none"></div>
 
         {/* Footer - only on hero section */}
-        {showFooter && <Footer />}
+        <Footer />
       </section>
 
       {/* About Section */}
