@@ -12,18 +12,19 @@ const ScrambleText = ({ text, className = "", as: Tag = "span" }: ScrambleTextPr
   const [displayText, setDisplayText] = useState(text);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const iterationRef = useRef(0);
+  const hasAnimatedRef = useRef(false);
+  const previousTextRef = useRef(text);
 
-  // Update displayText when text prop changes
-  useEffect(() => {
-    setDisplayText(text);
-  }, [text]);
-
-  const scramble = useCallback(() => {
+  const scramble = useCallback((isInitial = false) => {
     iterationRef.current = 0;
     
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
+
+    // Slower animation on initial load
+    const speed = isInitial ? 50 : 30;
+    const increment = isInitial ? 1 / 4 : 1 / 3;
 
     intervalRef.current = setInterval(() => {
       setDisplayText(
@@ -39,7 +40,7 @@ const ScrambleText = ({ text, className = "", as: Tag = "span" }: ScrambleTextPr
           .join("")
       );
 
-      iterationRef.current += 1 / 3;
+      iterationRef.current += increment;
 
       if (iterationRef.current >= text.length) {
         if (intervalRef.current) {
@@ -47,8 +48,31 @@ const ScrambleText = ({ text, className = "", as: Tag = "span" }: ScrambleTextPr
         }
         setDisplayText(text);
       }
-    }, 30);
+    }, speed);
   }, [text]);
+
+  // Update displayText when text prop changes - but don't scramble placeholders
+  useEffect(() => {
+    if (previousTextRef.current !== text && text !== "------") {
+      previousTextRef.current = text;
+      scramble(false);
+    } else if (text === "------") {
+      setDisplayText(text);
+    }
+  }, [text, scramble]);
+
+  // Run scramble animation on mount (skip for placeholder text)
+  useEffect(() => {
+    if (!hasAnimatedRef.current && text !== "------") {
+      hasAnimatedRef.current = true;
+      // Add a small random delay to stagger animations
+      const delay = Math.random() * 200;
+      const timer = setTimeout(() => {
+        scramble(true); // Pass true for slower initial animation
+      }, delay);
+      return () => clearTimeout(timer);
+    }
+  }, [scramble, text]);
 
   const handleMouseEnter = () => {
     scramble();

@@ -47,6 +47,9 @@ const CyclingScrambleText = ({ texts, interval = 3000, className = "" }: Cycling
   }, []);
 
   useEffect(() => {
+    // Initial scramble animation on mount
+    scrambleTo(texts[0]);
+    
     cycleIntervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => {
         const nextIndex = (prev + 1) % texts.length;
