@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ExperienceItem from "@/components/ExperienceItem";
 import SocialLink from "@/components/SocialLink";
 import Footer from "@/components/Footer";
@@ -132,10 +132,24 @@ const PHOTOS = [
 
 const Index = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [showFooter, setShowFooter] = useState(true);
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  // Hide footer on mobile when scrolling past hero section
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth < 640) { // mobile only
+        const heroHeight = window.innerHeight;
+        setShowFooter(window.scrollY < heroHeight - 100);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="bg-background text-foreground font-mono">
@@ -257,7 +271,7 @@ const Index = () => {
         <div className="sm:hidden absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/50 to-transparent pointer-events-none"></div>
 
         {/* Footer - only on hero section */}
-        <Footer />
+        {showFooter && <Footer />}
       </section>
 
       {/* About Section */}

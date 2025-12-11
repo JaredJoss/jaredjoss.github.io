@@ -79,7 +79,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="absolute bottom-0 left-0 right-0 px-4 sm:px-8 py-3 sm:py-6 flex flex-row justify-between items-end gap-2 sm:gap-0 text-xs sm:text-sm">
+    <footer className="fixed sm:absolute bottom-0 left-0 right-0 px-4 sm:px-8 py-3 sm:py-6 flex flex-row justify-between items-end gap-2 sm:gap-0 text-xs sm:text-sm bg-background/80 backdrop-blur-sm sm:bg-transparent sm:backdrop-blur-none">
       <div className="space-y-0.5 sm:space-y-1 max-w-full overflow-hidden flex-1">
         {track && (
           <div className="space-y-0.5 sm:space-y-1 group/song">
