@@ -142,10 +142,10 @@ const Index = () => {
       <CursorTrail />
       
       {/* Theme toggle in corner */}
-      <div className="fixed top-8 right-8 z-50">
+      <div className="fixed top-4 right-4 sm:top-8 sm:right-8 z-50">
         <button 
           onClick={() => setShowPopup(true)}
-          className="text-foreground hover:text-primary transition-colors text-xl"
+          className="text-foreground hover:text-primary transition-colors text-lg sm:text-xl p-2"
         >
           ☾
         </button>
@@ -154,16 +154,16 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen relative flex flex-col">
-        <main className="px-8 pt-32 pb-20 max-w-2xl flex-1">
+        <main className="px-4 sm:px-8 pt-24 sm:pt-32 pb-20 sm:pb-20 max-w-2xl flex-1">
           {/* Introduction */}
-          <div className="space-y-1 mb-8">
-            <p className="text-muted-foreground">
+          <div className="space-y-1 mb-6 sm:mb-8">
+            <p className="text-muted-foreground text-sm sm:text-base">
               <ScrambleText text="howzit, i'm" />
             </p>
-            <h1 className="text-4xl font-bold text-foreground tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
               <ScrambleText text="jared joselowitz" />
             </h1>
-            <div className="flex items-center gap-2 text-primary">
+            <div className="flex items-center gap-2 text-primary text-sm sm:text-base">
               <span className="animate-blink">{">"}</span>
               <CyclingScrambleText texts={TITLES} interval={3500} />
             </div>
@@ -223,7 +223,7 @@ const Index = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-6 pt-4">
+            <div className="flex items-center flex-wrap gap-4 sm:gap-6 pt-4 text-sm sm:text-base">
               <SocialLink label="email" href="mailto:jaredjoss123@gmail.com" />
               <SocialLink label="linkedin" href="https://www.linkedin.com/in/jaredjoselowitz/" />
               <SocialLink label="github" href="https://github.com/JaredJoss" />
@@ -233,36 +233,40 @@ const Index = () => {
         </main>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-8 sm:bottom-8 left-1/2 -translate-x-1/2">
           <button 
             onClick={scrollToAbout}
             className="text-muted-foreground hover:text-primary transition-colors animate-bounce-slow"
           >
             <svg 
-              width="24" 
-              height="24" 
+              width="20" 
+              height="20" 
               viewBox="0 0 24 24" 
               fill="none" 
               stroke="currentColor" 
               strokeWidth="2"
               strokeLinecap="round" 
               strokeLinejoin="round"
+              className="sm:w-6 sm:h-6"
             >
               <path d="M12 5v14M5 12l7 7 7-7"/>
             </svg>
           </button>
         </div>
+
+        {/* Footer - only on hero section */}
+        <Footer />
       </section>
 
       {/* About Section */}
-      <section id="about" className="min-h-screen px-8 py-24 max-w-4xl mx-auto">
-        <div className="flex items-center gap-4 mb-12">
-          <span className="text-primary font-medium">01.</span>
-          <h2 className="text-3xl font-bold">About Me</h2>
-          <div className="flex-1 h-px bg-border ml-4"></div>
+      <section id="about" className="min-h-screen px-4 sm:px-8 py-16 sm:py-24 max-w-4xl mx-auto">
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+          <span className="text-primary font-medium text-sm sm:text-base">01.</span>
+          <h2 className="text-2xl sm:text-3xl font-bold">About Me</h2>
+          <div className="flex-1 h-px bg-border ml-2 sm:ml-4"></div>
         </div>
 
-        <div className="section-border-left space-y-6 text-lg text-muted-foreground max-w-2xl">
+        <div className="section-border-left space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground max-w-2xl">
           <p>
             I design and study large language models for healthcare applications, with a focus on{" "}
             <span className="text-foreground">reliability</span>,{" "}
@@ -279,11 +283,11 @@ const Index = () => {
       </section>
 
       {/* Research & Publications Section */}
-      <section id="research" className="min-h-screen px-8 py-24 max-w-4xl mx-auto">
-        <div className="flex items-center gap-4 mb-12">
-          <span className="text-primary font-medium">02.</span>
-          <h2 className="text-3xl font-bold">Research & Publications</h2>
-          <div className="flex-1 h-px bg-border ml-4"></div>
+      <section id="research" className="min-h-screen px-4 sm:px-8 py-16 sm:py-24 max-w-4xl mx-auto">
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+          <span className="text-primary font-medium text-sm sm:text-base">02.</span>
+          <h2 className="text-2xl sm:text-3xl font-bold">Research & Publications</h2>
+          <div className="flex-1 h-px bg-border ml-2 sm:ml-4"></div>
         </div>
 
         <div className="space-y-6">
@@ -333,30 +337,30 @@ const Index = () => {
       </section>
 
       {/* Photography Section */}
-      <section id="photography" className="min-h-screen px-8 py-24 max-w-5xl mx-auto">
-        <div className="flex items-center gap-4 mb-8">
-          <span className="text-primary font-medium">03.</span>
-          <h2 className="text-3xl font-bold">Photography</h2>
-          <div className="flex-1 h-px bg-border ml-4"></div>
+      <section id="photography" className="min-h-screen px-4 sm:px-8 py-16 sm:py-24 max-w-5xl mx-auto">
+        <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <span className="text-primary font-medium text-sm sm:text-base">03.</span>
+          <h2 className="text-2xl sm:text-3xl font-bold">Photography</h2>
+          <div className="flex-1 h-px bg-border ml-2 sm:ml-4"></div>
         </div>
 
-        <div className="mb-8">
-          <code className="text-muted-foreground">
+        <div className="mb-6 sm:mb-8">
+          <code className="text-muted-foreground text-xs sm:text-sm">
             perspective: <span className="text-primary font-medium">str</span> = <span className="text-primary">"wildlife"</span>
           </code>
-          <p className="text-muted-foreground mt-2 max-w-2xl">
+          <p className="text-muted-foreground mt-2 max-w-2xl text-sm sm:text-base">
             Wildlife photography helps me think differently about perception and adaptation — qualities 
             central to both natural and artificial intelligence.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {PHOTOS.map((photo, index) => (
             <div key={index} className="photo-card group">
               <img 
                 src={photo.src} 
                 alt={photo.title}
-                className="w-full h-80 object-cover"
+                className="w-full h-64 sm:h-80 object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
                 <h4 className="text-foreground font-medium">{photo.title}</h4>
@@ -366,11 +370,6 @@ const Index = () => {
           ))}
         </div>
       </section>
-
-      {/* Spacer for footer */}
-      <div className="h-32"></div>
-
-      <Footer />
     </div>
   );
 };

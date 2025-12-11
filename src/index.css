@@ -172,3 +172,22 @@
 .photo-card:hover img {
   @apply scale-105;
 }
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Reduce section border on mobile */
+  .section-border-left {
+    border-left-width: 1px;
+    padding-left: 1rem;
+  }
+  
+  /* Publication cards on mobile */
+  .publication-card {
+    @apply p-4;
+  }
+  
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+}

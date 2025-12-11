@@ -79,38 +79,40 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 px-8 py-6 flex justify-between items-end text-sm">
-      <div className="space-y-1">
+    <footer className="absolute bottom-0 left-0 right-0 px-4 sm:px-8 py-4 sm:py-6 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 sm:gap-0 text-xs sm:text-sm">
+      <div className="space-y-1 max-w-full overflow-hidden">
         {track && (
           <div className="space-y-1 group/song">
             <div className="text-muted-foreground text-xs opacity-0 group-hover/song:opacity-100 transition-opacity duration-200">
               {track.nowPlaying ? "playing now" : track.timestamp ? `last song - ${getTimeAgo(track.timestamp)}` : ""}
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground flex-wrap">
               <span className="text-foreground">{track.nowPlaying ? "♪" : "♫"}</span>
-              <ScrambleText text={track.name.toLowerCase()} />
-              <span>by</span>
+              <span className="truncate max-w-[120px] sm:max-w-none">
+                <ScrambleText text={track.name.toLowerCase()} />
+              </span>
+              <span className="shrink-0">by</span>
               <a 
                 href={track.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground link-hover"
+                className="text-foreground link-hover truncate max-w-[100px] sm:max-w-none"
               >
                 <ScrambleText text={track.artist.toLowerCase()} />
               </a>
-              <span className="text-primary">↗</span>
+              <span className="text-primary shrink-0">↗</span>
             </div>
           </div>
         )}
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <div className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground">
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
           <ScrambleText text="london" className="text-foreground" />
           <span>,</span>
           <ScrambleText text="uk" />
         </div>
       </div>
       
-      <div className="text-right space-y-1 group/visits">
+      <div className="text-left sm:text-right space-y-1 group/visits shrink-0">
         <div className="text-muted-foreground text-xs opacity-0 group-hover/visits:opacity-100 transition-opacity duration-200">
           visits
         </div>
