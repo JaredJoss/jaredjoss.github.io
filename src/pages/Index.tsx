@@ -261,7 +261,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="min-h-screen px-4 sm:px-8 py-16 sm:py-24 max-w-4xl mx-auto">
+      <section id="about" className="px-4 sm:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 max-w-4xl mx-auto">
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
           <span className="text-primary font-medium text-sm sm:text-base">01.</span>
           <h2 className="text-2xl sm:text-3xl font-bold">About Me</h2>
@@ -285,7 +285,7 @@ const Index = () => {
       </section>
 
       {/* Research & Publications Section */}
-      <section id="research" className="min-h-screen px-4 sm:px-8 py-16 sm:py-24 max-w-4xl mx-auto">
+      <section id="research" className="px-4 sm:px-8 pt-12 sm:pt-16 pb-16 sm:pb-24 max-w-4xl mx-auto">
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
           <span className="text-primary font-medium text-sm sm:text-base">02.</span>
           <h2 className="text-2xl sm:text-3xl font-bold">Research & Publications</h2>
@@ -339,7 +339,7 @@ const Index = () => {
       </section>
 
       {/* Photography Section */}
-      <section id="photography" className="min-h-screen px-4 sm:px-8 py-16 sm:py-24 max-w-5xl mx-auto">
+      <section id="photography" className="px-4 sm:px-8 py-16 sm:py-24 max-w-5xl mx-auto">
         <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
           <span className="text-primary font-medium text-sm sm:text-base">03.</span>
           <h2 className="text-2xl sm:text-3xl font-bold">Photography</h2>
