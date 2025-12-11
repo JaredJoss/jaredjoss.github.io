@@ -154,9 +154,9 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen relative flex flex-col">
-        <main className="px-4 sm:px-8 pt-20 sm:pt-32 pb-20 sm:pb-20 max-w-2xl flex-1">
+        <main className="px-4 sm:px-8 pt-16 sm:pt-32 pb-16 sm:pb-20 max-w-2xl flex-1">
           {/* Introduction */}
-          <div className="space-y-1 mb-6 sm:mb-8">
+          <div className="space-y-1 mb-4 sm:mb-8">
             <p className="text-muted-foreground text-sm sm:text-base">
               <ScrambleText text="howzit, i'm" />
             </p>
@@ -172,7 +172,7 @@ const Index = () => {
           {/* Experience */}
           <div className="space-y-4 sm:space-y-6">
             {/* Currently */}
-            <div className="space-y-2">
+            <div className="space-y-1 sm:space-y-2">
               <p className="text-muted-foreground text-sm">
                 <ScrambleText text="currently" />
               </p>
@@ -185,7 +185,7 @@ const Index = () => {
             </div>
 
             {/* Previously */}
-            <div className="space-y-2">
+            <div className="space-y-1 sm:space-y-2">
               <p className="text-muted-foreground text-sm">
                 <ScrambleText text="previously" />
               </p>
@@ -204,7 +204,7 @@ const Index = () => {
             </div>
 
             {/* Education */}
-            <div className="space-y-2">
+            <div className="space-y-1 sm:space-y-2">
               <p className="text-muted-foreground text-sm">
                 <ScrambleText text="education" />
               </p>
@@ -232,27 +232,29 @@ const Index = () => {
           </div>
         </main>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2">
+        {/* Scroll Indicator - desktop only */}
+        <div className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2">
           <button 
             onClick={scrollToAbout}
             className="text-muted-foreground hover:text-primary transition-colors animate-bounce-slow"
           >
             <svg 
-              width="20" 
-              height="20" 
+              width="24" 
+              height="24" 
               viewBox="0 0 24 24" 
               fill="none" 
               stroke="currentColor" 
               strokeWidth="2"
               strokeLinecap="round" 
               strokeLinejoin="round"
-              className="sm:w-6 sm:h-6"
             >
               <path d="M12 5v14M5 12l7 7 7-7"/>
             </svg>
           </button>
         </div>
+
+        {/* Subtle gradient fade on mobile to hint at more content */}
+        <div className="sm:hidden absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/50 to-transparent pointer-events-none"></div>
 
         {/* Footer - only on hero section */}
         <Footer />
