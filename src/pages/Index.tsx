@@ -154,7 +154,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="h-screen relative flex flex-col">
-        <main className="px-4 sm:px-8 pt-12 sm:pt-32 pb-24 sm:pb-20 max-w-2xl flex-1">
+        <main className="px-4 sm:px-8 pt-20 sm:pt-32 pb-24 sm:pb-20 max-w-2xl flex-1">
           {/* Introduction */}
           <div className="space-y-0.5 sm:space-y-1 mb-3 sm:mb-8">
             <p className="text-muted-foreground text-xs sm:text-base">

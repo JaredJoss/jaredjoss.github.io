@@ -53,7 +53,7 @@ const NoLightModePopup = ({ open, onClose }: NoLightModePopupProps) => {
 
   return (
     <div className="absolute top-full right-0 mt-2 whitespace-nowrap">
-      <p className="text-foreground font-mono text-sm">
+      <p className="text-foreground font-mono text-xs sm:text-sm">
         {displayText}
       </p>
     </div>
