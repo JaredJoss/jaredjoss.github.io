@@ -157,7 +157,6 @@
 
 .publication-card:hover {
   @apply border-border/50 bg-card/80;
-  box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
 }
 
 /* Photo card */
