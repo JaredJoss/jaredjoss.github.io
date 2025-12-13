@@ -78,7 +78,7 @@ const PUBLICATIONS: Publication[] = [
   },
   {
     year: "2025",
-    venue: "arXiv Preprint",
+    venue: "arXiv",
     title: "MATRIX: Multi-Agent simulaTion fRamework for safe Interactions",
     description: (
       <>
@@ -154,32 +154,26 @@ const PUBLICATIONS: Publication[] = [
 const PHOTOS = [
   {
     src: "/photos/zebra.jpeg",  // Replace with your actual photo path
-    title: "Zebra",
     meta: "ISO 400 • F/2.8 • 1/1000s",  // Update with your actual camera settings
   },
   {
     src: "/photos/malachite_kingfisher.jpeg",
-    title: "Malachite Kingfisher", 
     meta: "ISO 800 • F/4.0 • 1/2000s",
   },
   {
     src: "/photos/lion.jpeg",
-    title: "Lion",
     meta: "ISO 200 • F/5.6 • 1/500s",
   },
   {
     src: "/photos/baby_baboon.jpeg",
-    title: "Infant Baboon",
     meta: "ISO 100 • F/8.0 • 1/250s",
   },
   {
     src: "/photos/crocodile.jpeg",
-    title: "Crocodile",
     meta: "ISO 200 • F/5.6 • 1/500s",
   },
   {
     src: "/photos/leopard.jpeg",
-    title: "Leopard",
     meta: "ISO 200 • F/5.6 • 1/500s",
   }
 ];
@@ -459,11 +453,9 @@ const Index = () => {
             <div key={index} className="photo-card group">
               <img 
                 src={photo.src} 
-                alt={photo.title}
                 className="w-full h-64 sm:h-80 object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <h4 className="text-foreground font-medium">{photo.title}</h4>
                 <p className="text-primary text-sm">{photo.meta}</p>
               </div>
             </div>
