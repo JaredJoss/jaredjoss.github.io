@@ -110,7 +110,7 @@ const PUBLICATIONS: Publication[] = [
     title: "On Presenters and Commenters in YouTube Climate Change Videos",
     description: (
       <>
-        Analyzing how presenter style and{" "}
+        Analysing how presenter style and{" "}
         <span className="text-foreground/80 font-medium">audience interaction</span> influence public engagement with climate change communication.
       </>
     ),
