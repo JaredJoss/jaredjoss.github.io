@@ -318,19 +318,29 @@ const Index = () => {
           <div className="flex-1 h-px bg-border ml-2 sm:ml-4"></div>
         </div>
 
-        <div className="section-border-left space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground max-w-2xl">
-          <p>
-            I design and study large language models for healthcare applications, with a focus on{" "}
-            <span className="text-foreground">reliability</span>,{" "}
-            <span className="text-foreground">interpretability</span>, and{" "}
-            <span className="text-foreground">safety</span>.
-          </p>
-          <p>
-            My research aims to make AI systems that clinicians can understand and trust — advancing both 
-            performance and accountability. I'm particularly interested in{" "}
-            <span className="text-primary">steerable LLMs</span> that adapt to context while maintaining 
-            alignment with human values.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="md:col-span-2">
+            <div className="section-border-left space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground">
+              <p>
+                I design and study large language models for healthcare applications, with a focus on{" "}
+                <span className="text-foreground">reliability</span>,{" "}
+                <span className="text-foreground">interpretability</span>, and{" "}
+                <span className="text-foreground">safety</span>.
+              </p>
+              <p>
+                My research aims to make AI systems that clinicians can understand and trust — advancing both 
+                performance and accountability. I'm particularly interested in{" "}
+                <span className="text-primary">steerable LLMs</span> that adapt to context while maintaining 
+                alignment with human values.
+              </p>
+            </div>
+          </div>
+          <div className="md:col-span-1 flex flex-col items-center justify-between">
+            <img src="/profile.jpeg" alt="Jared Joselowitz" className="rounded-lg w-64 h-64 object-cover mb-4"/>
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 text-sm text-muted-foreground border border-border/70 rounded-xl px-4 py-2 bg-background/60 transition-colors duration-200">
+              Download CV
+            </a>
+          </div>
         </div>
       </section>
 
