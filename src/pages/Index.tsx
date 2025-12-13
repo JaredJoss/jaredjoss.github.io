@@ -181,7 +181,7 @@ const PHOTOS = [
 const Index = () => {
   const [showPopup, setShowPopup] = useState(false);
   const linkButtonClass =
-    "group inline-flex items-center gap-2 text-sm text-muted-foreground border border-border/70 rounded-xl px-4 py-2 bg-background/60 transition-colors duration-200 hover:border-primary/60 hover:text-primary";
+    "group inline-flex items-center gap-2 text-sm text-muted-foreground border border-border/70 rounded-xl px-4 py-2 bg-background/60 transition-colors duration-200 hover:text-primary";
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
