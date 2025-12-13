@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import ExperienceItem from "@/components/ExperienceItem";
 import SocialLink from "@/components/SocialLink";
 import Footer from "@/components/Footer";
@@ -18,21 +18,60 @@ const TITLES = [
   "clinical ai",
 ];
 
-const PUBLICATIONS = [
+type Publication = {
+  year: string;
+  venue: string;
+  title: string;
+  description: ReactNode;
+  tags: string[];
+  link: string;
+  status: string;
+  codeLink?: string;
+};
+
+const PUBLICATIONS: Publication[] = [
+  {
+    year: "2026",
+    venue: "IWSDS 2026",
+    title: "WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding",
+    description: (
+      <>
+        Finds <span className="text-foreground/80 font-medium">WER</span> poorly reflects{" "}
+        <span className="text-foreground/80 font-medium">clinical risk</span> from ASR errors and proposes an <span className="text-foreground/80 font-medium">LLM judge</span> matching clinician safety assessments.
+      </>
+    ),
+    tags: ["#ASR", "#Clinical", "#Safety", "#GEPA"],
+    link: "https://arxiv.org/abs/2511.16544",
+    status: "Published",
+    codeLink: "https://github.com/Ufonia/wer-is-unaware",
+  },
   {
     year: "2025",
     venue: "COLM 2025",
     title: "Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning",
-    description: "Understanding how LLM reward models can be reverse-engineered using inverse reinforcement learning to improve interpretability and alignment.",
+    description: (
+      <>
+        Understanding how LLM reward models can be reverse-engineered using{" "}
+        <span className="text-foreground/80 font-medium">inverse reinforcement learning</span>{" "}
+        to improve <span className="text-foreground/80 font-medium">interpretability</span> and <span className="text-foreground/80 font-medium">alignment</span>.
+      </>
+    ),
     tags: ["#RLHF", "#Interpretability", "#LLM"],
     link: "https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:9yKSN-GCB0IC",
     status: "Published",
+    codeLink: "https://github.com/ai4ai-lab/irl_for_llms",
   },
   {
     year: "2025",
     venue: "ACL 2025",
     title: "ASTRID — An Automated and Scalable TRIaD for RAG Evaluation",
-    description: "Framework for evaluating retrieval-augmented generation (RAG) systems in clinical QA, focusing on safety, reliability, and scalability.",
+    description: (
+      <>
+        Framework for evaluating <span className="text-foreground/80 font-medium">retrieval-augmented generation (RAG)</span> systems in clinical QA, focusing on{" "}
+        <span className="text-foreground/80 font-medium">safety</span>,{" "}
+        <span className="text-foreground/80 font-medium">reliability</span>, and scalability.
+      </>
+    ),
     tags: ["#RAG", "#Healthcare", "#Evaluation"],
     link: "https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:UeHWp8X0CEIC",
     status: "Published",
@@ -41,25 +80,26 @@ const PUBLICATIONS = [
     year: "2025",
     venue: "arXiv Preprint",
     title: "MATRIX: Multi-Agent simulaTion fRamework for safe Interactions",
-    description: "Structured multi-agent framework to evaluate safety and behaviour risks in clinical dialogue agents at scale.",
+    description: (
+      <>
+        Structured <span className="text-foreground/80 font-medium">multi-agent</span> framework to evaluate{" "}
+        <span className="text-foreground/80 font-medium">safety</span> and behaviour risks in clinical dialogue agents at scale.
+      </>
+    ),
     tags: ["#MultiAgent", "#Safety", "#Healthcare"],
     link: "https://arxiv.org/abs/2508.19163",
-    status: "Preprint",
-  },
-  {
-    year: "2025",
-    venue: "arXiv Preprint",
-    title: "WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding",
-    description: "Finds WER poorly reflects clinical risk from ASR errors and proposes an LLM judge matching clinician safety assessments.",
-    tags: ["#ASR", "#Clinical", "#Safety"],
-    link: "https://arxiv.org/abs/2511.16544",
     status: "Preprint",
   },
   {
     year: "2024",
     venue: "CICE 2024",
     title: "Video Selection for Enjoyable Learning",
-    description: "Data-driven approach to optimizing educational video selection for improved learner engagement and enjoyment.",
+    description: (
+      <>
+        Data-driven approach to <span className="text-foreground/80 font-medium">optimising</span> educational video selection for improved{" "}
+        <span className="text-foreground/80 font-medium">engagement</span> and enjoyment.
+      </>
+    ),
     tags: ["#Education", "#ML"],
     link: "https://scholar.google.com/citations?user=1Eh35coAAAAJ",
     status: "Published",
@@ -68,7 +108,12 @@ const PUBLICATIONS = [
     year: "2024",
     venue: "ECSM 2024",
     title: "On Presenters and Commenters in YouTube Climate Change Videos",
-    description: "Analyzing how presenter style and audience interaction influence public engagement with climate change communication.",
+    description: (
+      <>
+        Analyzing how presenter style and{" "}
+        <span className="text-foreground/80 font-medium">audience interaction</span> influence public engagement with climate change communication.
+      </>
+    ),
     tags: ["#NLP", "#Climate", "#Social Media"],
     link: "https://papers.academic-conferences.org/index.php/ecsm/article/view/2076",
     status: "Published",
@@ -77,7 +122,12 @@ const PUBLICATIONS = [
     year: "2023",
     venue: "E3S Web of Conferences",
     title: "Video Features Predicting Engagement in Climate Change Education",
-    description: "Identifying which visual and content features in educational videos drive audience engagement and retention.",
+    description: (
+      <>
+        Identifying which visual and content features in educational videos drive{" "}
+        <span className="text-foreground/80 font-medium">engagement</span> and retention.
+      </>
+    ),
     tags: ["#Education", "#Climate"],
     link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Eh35coAAAAJ&citation_for_view=1Eh35coAAAAJ:u-x6o8ySG0sC",
     status: "Published",
@@ -86,7 +136,11 @@ const PUBLICATIONS = [
     year: "2022",
     venue: "CSCL 2022",
     title: "Collaborative Learning in YouTube: Under Which Conditions Can Learning Happen?",
-    description: "Studying online collaborative learning dynamics to understand when and how digital discussions foster real learning outcomes.",
+    description: (
+      <>
+        Studying online <span className="text-foreground/80 font-medium">collaborative learning</span> dynamics to understand when and how digital discussions foster real learning outcomes.
+      </>
+    ),
     tags: ["#Education", "#Collaboration"],
     link: "https://repository.isls.org/handle/1/8363",
     status: "Published",
@@ -132,6 +186,8 @@ const PHOTOS = [
 
 const Index = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const linkButtonClass =
+    "group inline-flex items-center gap-2 text-sm text-muted-foreground border border-border/70 rounded-xl px-4 py-2 bg-background/60 transition-colors duration-200 hover:border-primary/60 hover:text-primary";
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -316,7 +372,7 @@ const Index = () => {
                 {pub.description}
               </p>
               
-              <div className="flex items-center justify-between flex-wrap gap-2">
+              <div className="flex items-center justify-between flex-wrap gap-3">
                 <div className="flex gap-2 flex-wrap">
                   {pub.tags.map((tag, i) => (
                     <span key={i} className="text-xs text-muted-foreground">
@@ -324,14 +380,56 @@ const Index = () => {
                     </span>
                   ))}
                 </div>
-                <a 
-                  href={pub.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm border border-border px-4 py-2 rounded hover:border-primary hover:text-primary transition-colors"
-                >
-                  Read Paper ↗
-                </a>
+                <div className="flex items-center gap-2">
+                  {pub.codeLink && (
+                    <a
+                      href={pub.codeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkButtonClass}
+                    >
+                      <span>View Code</span>
+                      <svg
+                        aria-hidden="true"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="transition-colors duration-200"
+                      >
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                      </svg>
+                    </a>
+                  )}
+                  <a 
+                    href={pub.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkButtonClass}
+                  >
+                    <span>Read Paper</span>
+                    <svg
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="transition-colors duration-200"
+                    >
+                      <path d="M7 17l9-9" />
+                      <path d="M10 8h6v6" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
