@@ -1,63 +1,68 @@
-# Welcome to your Lovable project
+# jossy.co.za
 
-## Project info
+Personal site of Jared Joselowitz — research engineer working on LLMs for healthcare. Single-page portfolio covering about, research & publications, and wildlife photography.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Live at **[jossy.co.za](https://jossy.co.za)**.
 
-## How can I edit this code?
+![Screenshot of the landing page](docs/landing-page.png)
 
-There are several ways of editing your application.
+## Stack
 
-**Use Lovable**
+- [Vite](https://vitejs.dev/) + React 18 + TypeScript
+- Tailwind CSS with [shadcn/ui](https://ui.shadcn.com/) components (`src/components/ui`)
+- React Router (`/` and a catch-all 404)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Local development
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requires Node.js 20 (the version CI builds with).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run dev      # http://localhost:8080
 ```
 
-**Edit a file directly in GitHub**
+Other scripts:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Script | Purpose |
+| --- | --- |
+| `npm run build` | Production build to `dist/` |
+| `npm run build:dev` | Build in development mode |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | ESLint |
 
-**Use GitHub Codespaces**
+## Content
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Almost all page content is hardcoded as constants in [`src/pages/Index.tsx`](src/pages/Index.tsx) — the cycling job titles, publications, experience, and photo grid. To add a publication, append to `PUBLICATIONS`:
 
-## How can I deploy this project?
+```ts
+{
+  year: "2026",
+  venue: "IWSDS 2026",
+  title: "...",
+  description: <>...</>,
+  tags: ["#ASR", "#Clinical"],
+  link: "https://arxiv.org/abs/...",
+  status: "Published",        // or "Preprint" — renders a yellow badge
+  presentation: "Oral",       // optional, renders a violet badge
+  codeLink: "https://github.com/...",  // optional "View Code" button
+}
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Static assets (`cv.pdf`, `profile.jpeg`, `photos/`, `og-image.jpg`, `robots.txt`) live in `public/` and are served from the site root.
 
-## Can I connect a custom domain to my Lovable project?
+## Environment variables
 
-Yes, you can!
+The footer shows the most recent Last.fm track when these are set (create a `.env` locally; they're configured as repository secrets for CI):
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```sh
+VITE_LASTFM_API_KEY=...
+VITE_LASTFM_USERNAME=...
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Both are inlined into the client bundle at build time, so treat the key as public. The footer's visit counter uses [counterapi.dev](https://counterapi.dev/) and needs no configuration.
+
+## Deployment
+
+Hosted on GitHub Pages. Every push to `main` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds with Node 20 and publishes `dist/` to the `github-pages` environment — no `gh-pages` branch involved.
+
+The custom domain is configured in the repository's Pages settings (`jossy.co.za`, with `www` as a CNAME to `jaredjoss.github.io`) rather than via a `CNAME` file in the repo. HTTPS is enforced.
