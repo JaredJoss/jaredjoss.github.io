@@ -16,6 +16,10 @@ dist
 dist-ssr
 *.local
 
+# CV rendering
+cv/.venv
+cv/build
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,39 @@
+name: Check CV is up to date
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'cv/**'
+      - 'public/cv.pdf'
+      - 'scripts/build-cv.sh'
+      - '.github/workflows/cv.yml'
+  pull_request:
+    paths:
+      - 'cv/**'
+      - 'public/cv.pdf'
+      - 'scripts/build-cv.sh'
+      - '.github/workflows/cv.yml'
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Render CV
+        run: bash scripts/build-cv.sh
+
+      - name: Fail if public/cv.pdf is out of date
+        run: |
+          if ! git diff --quiet -- public/cv.pdf; then
+            echo "::error::public/cv.pdf does not match cv/cv.yaml. Run 'npm run cv' and commit the result."
+            exit 1
+          fi
