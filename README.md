@@ -4,7 +4,7 @@ Personal site of Jared Joselowitz — research engineer working on LLMs for heal
 
 Live at **[jossy.co.za](https://jossy.co.za)**.
 
-![Screenshot of the landing page](docs/screenshot.png)
+![Screenshot of the landing page](docs/landing-page.png)
 
 ## Stack
 
