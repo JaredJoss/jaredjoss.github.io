@@ -26,6 +26,7 @@ type Publication = {
   tags: string[];
   link: string;
   status: string;
+  presentation?: "Oral" | "Poster";
   codeLink?: string;
 };
 
@@ -43,6 +44,7 @@ const PUBLICATIONS: Publication[] = [
     tags: ["#ASR", "#Clinical", "#Safety", "#GEPA"],
     link: "https://arxiv.org/abs/2511.16544",
     status: "Published",
+    presentation: "Oral",
     codeLink: "https://github.com/Ufonia/wer-is-unaware",
   },
   {
@@ -364,6 +366,11 @@ const Index = () => {
                 {pub.status === "Preprint" && (
                   <span className="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-1 rounded font-medium">
                     Preprint
+                  </span>
+                )}
+                {pub.presentation && (
+                  <span className="bg-violet-500/20 text-violet-400 text-xs px-2 py-1 rounded font-medium">
+                    🎤 {pub.presentation}
                   </span>
                 )}
               </div>
