@@ -2,7 +2,7 @@
 - Role: Senior AI Research Engineer
 - Focus: LLMs, Healthcare, Safety, Steerability, Inverse Reinforcement Learning (IRL)
 - Education: MSc Applied Machine Learning (Distinction), Imperial College London
-- Website: https://jaredjoss.github.io/
+- Website: https://jossy.co.za/
 
 ## Bio
 Senior AI Research Engineer (MSc, Imperial College London) designing safe and steerable LLMs for healthcare. Specializes in using Inverse Reinforcement Learning (IRL) to extract reward models and evaluating clinical RAG systems. Currently building automated postoperative follow-up systems at Ufonia.
@@ -13,7 +13,7 @@ Senior AI Research Engineer (MSc, Imperial College London) designing safe and st
 - Core Concepts: RLHF, SFT, Reward Modeling, RAG, Computer Vision, Inverse RL.
 
 ## Key Links
-- [CV (PDF)](https://jaredjoss.github.io/cv.pdf)
+- [CV (PDF)](https://jossy.co.za/cv.pdf)
 - [GitHub](https://github.com/JaredJoss)
 - [Google Scholar](https://scholar.google.com/citations?user=1Eh35coAAAAJ&hl=en)
 - [LinkedIn](https://www.linkedin.com/in/jaredjoselowitz/)

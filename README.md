@@ -4,6 +4,8 @@ Personal site of Jared Joselowitz — research engineer working on LLMs for heal
 
 Live at **[jossy.co.za](https://jossy.co.za)**.
 
+![Screenshot of the landing page](docs/screenshot.png)
+
 ## Stack
 
 - [Vite](https://vitejs.dev/) + React 18 + TypeScript
