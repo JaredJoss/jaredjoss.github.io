@@ -370,7 +370,7 @@ const Index = () => {
                 )}
                 {pub.presentation && (
                   <span className="bg-violet-500/20 text-violet-400 text-xs px-2 py-1 rounded font-medium">
-                    🎤 {pub.presentation}
+                    {pub.presentation}
                   </span>
                 )}
               </div>
