@@ -42,7 +42,7 @@ const PUBLICATIONS: Publication[] = [
       </>
     ),
     tags: ["#ASR", "#Clinical", "#Safety", "#GEPA"],
-    link: "https://arxiv.org/abs/2511.16544",
+    link: "https://aclanthology.org/2026.iwsds-1.39/",
     status: "Published",
     presentation: "Oral",
     codeLink: "https://github.com/Ufonia/wer-is-unaware",
