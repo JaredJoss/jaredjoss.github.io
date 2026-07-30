@@ -61,7 +61,37 @@ npm run cv       # rewrites public/cv.pdf, ~1s
 
 The script creates a virtualenv in `cv/.venv` on first run and needs `uv` or Python >= 3.11. Edit the YAML, re-render, and commit both files — [`.github/workflows/cv.yml`](.github/workflows/cv.yml) re-renders on PRs and fails if the committed PDF's text no longer matches the YAML.
 
-Layout is controlled entirely by the `design:` block at the bottom of the YAML (fonts, margins, spacing, and the per-entry-type row templates); the `cv:` block above it is pure content.
+### Editing
+
+Everything above the `design:` key is content; everything below it is layout. To change the CV, edit the `cv.sections` entries — e.g. to add a job:
+
+```yaml
+    EXPERIENCE:
+      - company: Ufonia
+        position: Senior AI Research Engineer
+        start_date: 2025-02
+        end_date: present        # or a YYYY-MM date
+        location: London, United Kingdom
+        highlights:
+          - Developing LLM-based clinical conversational systems.
+```
+
+Section names are arbitrary (they render verbatim, hence the all-caps keys). Entry shapes are fixed per section: `EDUCATION` uses `institution`/`area`/`degree`, `PROJECTS` and `RESEARCH & COLLABORATIONS` use `name`/`summary`, `PUBLICATIONS` uses `title`/`authors`/`journal`, `TECHNICAL SKILLS` uses `label`/`details`, and `ACHIEVEMENTS` uses `bullet`. Highlight text supports Markdown, including links: `[ASTRID](https://aclanthology.org/...)`.
+
+Then run `npm run cv` and commit `cv/cv.yaml` and `public/cv.pdf` together.
+
+### Layout
+
+The `design:` block controls fonts, colours, margins, and spacing, plus the row templates for each entry type. For example, experience entries render the company on the first row and the position underneath, with the date and location right-aligned:
+
+```yaml
+  templates:
+    experience_entry:
+      main_column: "**COMPANY**\n*POSITION*\nSUMMARY\nHIGHLIGHTS"
+      date_and_location_column: "DATE\n*LOCATION*"
+```
+
+Options are documented in the [RenderCV design reference](https://docs.rendercv.com/user_guide/structure_of_the_yaml_input_file/). The version is pinned in [`cv/requirements.txt`](cv/requirements.txt) because the design schema changes between minor releases.
 
 ## Environment variables
 
