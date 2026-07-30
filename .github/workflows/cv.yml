@@ -36,12 +36,13 @@ jobs:
           cp public/cv.pdf /tmp/committed.pdf
           bash scripts/build-cv.sh
 
-      # PDF bytes are not stable across machines (font subsetting, Typst build),
-      # so compare the extracted text layer instead.
+      # Neither PDF bytes nor line breaks are stable across machines (font
+      # subsetting, font versions), so compare the words in the text layer.
       - name: Fail if public/cv.pdf is out of date
         run: |
-          pdftotext -layout /tmp/committed.pdf /tmp/committed.txt
-          pdftotext -layout public/cv.pdf /tmp/rendered.txt
+          normalize() { pdftotext "$1" - | tr -d '[:space:]-' | fold -w 100; }
+          normalize /tmp/committed.pdf > /tmp/committed.txt
+          normalize public/cv.pdf > /tmp/rendered.txt
           if ! diff -u /tmp/committed.txt /tmp/rendered.txt; then
             echo "::error::public/cv.pdf does not match cv/cv.yaml. Run 'npm run cv' and commit the result."
             exit 1
