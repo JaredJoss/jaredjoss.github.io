@@ -28,12 +28,21 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Render CV
-        run: bash scripts/build-cv.sh
+      - name: Install poppler-utils
+        run: sudo apt-get install -y poppler-utils
 
+      - name: Render CV
+        run: |
+          cp public/cv.pdf /tmp/committed.pdf
+          bash scripts/build-cv.sh
+
+      # PDF bytes are not stable across machines (font subsetting, Typst build),
+      # so compare the extracted text layer instead.
       - name: Fail if public/cv.pdf is out of date
         run: |
-          if ! git diff --quiet -- public/cv.pdf; then
+          pdftotext -layout /tmp/committed.pdf /tmp/committed.txt
+          pdftotext -layout public/cv.pdf /tmp/rendered.txt
+          if ! diff -u /tmp/committed.txt /tmp/rendered.txt; then
             echo "::error::public/cv.pdf does not match cv/cv.yaml. Run 'npm run cv' and commit the result."
             exit 1
           fi
