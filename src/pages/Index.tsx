@@ -149,14 +149,10 @@ const PUBLICATIONS: Publication[] = [
   },
 ];
 
-// To add your own photos:
-// 1. Create folder: public/photos/
-// 2. Add your images there
-// 3. Update the src paths below to "/photos/your-image.jpg"
 const PHOTOS = [
   {
-    src: "/photos/zebra.jpeg",  // Replace with your actual photo path
-    meta: "ISO 400 • F/2.8 • 1/1000s",  // Update with your actual camera settings
+    src: "/photos/zebra.jpeg",
+    meta: "ISO 400 • F/2.8 • 1/1000s",
   },
   {
     src: "/photos/malachite_kingfisher.jpeg",
@@ -177,6 +173,38 @@ const PHOTOS = [
   {
     src: "/photos/leopard.jpeg",
     meta: "ISO 200 • F/5.6 • 1/500s",
+  },
+  {
+    src: "/photos/elephant.jpeg",
+    meta: "ISO 400 • F/4.0 • 1/1000s",
+  },
+  {
+    src: "/photos/wild_dog_yawn.jpeg",
+    meta: "ISO 640 • F/5.6 • 1/800s",
+  },
+  {
+    src: "/photos/pied_kingfisher.jpeg",
+    meta: "ISO 500 • F/5.0 • 1/1600s",
+  },
+  {
+    src: "/photos/leopard_walking.jpeg",
+    meta: "ISO 320 • F/4.5 • 1/640s",
+  },
+  {
+    src: "/photos/wild_dog_road.jpeg",
+    meta: "ISO 250 • F/4.0 • 1/500s",
+  },
+  {
+    src: "/photos/storks.jpeg",
+    meta: "ISO 200 • F/5.6 • 1/400s",
+  },
+  {
+    src: "/photos/sunset.jpeg",
+    meta: "ISO 100 • F/11 • 1/125s",
+  },
+  {
+    src: "/photos/camera_sunset.jpeg",
+    meta: "ISO 200 • F/8.0 • 1/250s",
   }
 ];
 
@@ -464,18 +492,110 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {PHOTOS.map((photo, index) => (
-            <div key={index} className="photo-card group">
-              <img 
-                src={photo.src} 
-                className="w-full h-64 sm:h-80 object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <p className="text-primary text-sm">{photo.meta}</p>
-              </div>
+        {/* Collage Layout */}
+        <div className="grid grid-cols-12 auto-rows-[180px] gap-3 sm:gap-4">
+          {/* Photo 1 - Zebra - Large */}
+          <div className="photo-card group col-span-12 sm:col-span-7 row-span-2">
+            <img src={PHOTOS[0].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[0].meta}</p>
             </div>
-          ))}
+          </div>
+
+          {/* Photo 2 - Kingfisher - Tall */}
+          <div className="photo-card group col-span-6 sm:col-span-5 row-span-3">
+            <img src={PHOTOS[1].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[1].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 3 - Lion - Wide & Tall */}
+          <div className="photo-card group col-span-6 sm:col-span-7 row-span-3 bg-background">
+            <img src={PHOTOS[2].src} className="w-full h-full object-contain" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[2].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 4 - Storks - Tall */}
+          <div className="photo-card group col-span-6 sm:col-span-5 row-span-3">
+            <img src={PHOTOS[11].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[11].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 5 - Leopard - Under Lion */}
+          <div className="photo-card group col-span-6 sm:col-span-7 row-span-2">
+            <img src={PHOTOS[5].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[5].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 6 - Elephant - Under Storks */}
+          <div className="photo-card group col-span-6 sm:col-span-5 row-span-2">
+            <img src={PHOTOS[6].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[6].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 7 - Baboon - Under Leopard */}
+          <div className="photo-card group col-span-6 sm:col-span-7 row-span-2">
+            <img src={PHOTOS[3].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[3].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 8 - Wild Dog Road - Tall */}
+          <div className="photo-card group col-span-6 sm:col-span-5 row-span-2">
+            <img src={PHOTOS[10].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[10].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 9 - Wild Dog Yawn - Wide */}
+          <div className="photo-card group col-span-6 sm:col-span-7 row-span-2">
+            <img src={PHOTOS[7].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[7].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 10 - Camera Sunset - Wide */}
+          <div className="photo-card group col-span-12 sm:col-span-7 row-span-2">
+            <img src={PHOTOS[13].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[13].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 11 - Crocodile - Small */}
+          <div className="photo-card group col-span-6 sm:col-span-5 row-span-2">
+            <img src={PHOTOS[4].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[4].meta}</p>
+            </div>
+          </div>
+
+          {/* Photo 12 - Pied Kingfisher - Wide */}
+          <div className="photo-card group col-span-12 sm:col-span-8 row-span-2">
+            <img src={PHOTOS[8].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[8].meta}</p>
+            </div>
+          </div>
+          {/* Photo 14 - Leopard Walking - Wide */}
+          <div className="photo-card group col-span-12 sm:col-span-8 row-span-2">
+            <img src={PHOTOS[9].src} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="text-primary text-sm">{PHOTOS[9].meta}</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
