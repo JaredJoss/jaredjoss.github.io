@@ -25,7 +25,7 @@ cv:
           - Rebuilt prompt development around DSPy, replacing manual prompt engineering with automatic optimisation (GEPA optimiser) across both the clinical voice agents and the LLM judges to make prompts reproducible and auditable.
           - Built the safety-evaluation pipelines behind these systems (reference-based, simulated-patient, and LLM-as-judge methods), spanning hazards from ASR errors to patient interruptions and multilingual interactions.
       - company: The Awareness Company
-        position: Junior Data Scientist
+        position: Data Scientist
         start_date: 2022-09
         end_date: 2023-09
         location: Johannesburg, South Africa
