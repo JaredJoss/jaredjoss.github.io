@@ -1,0 +1,59 @@
+name: Check CVs are up to date
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'cv/**'
+      - 'public/*_cv.pdf'
+      - 'scripts/build-cv.sh'
+      - '.github/workflows/cv.yml'
+  pull_request:
+    paths:
+      - 'cv/**'
+      - 'public/*_cv.pdf'
+      - 'scripts/build-cv.sh'
+      - '.github/workflows/cv.yml'
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install poppler-utils
+        run: sudo apt-get install -y poppler-utils
+
+      - name: Render CVs
+        run: |
+          mkdir -p /tmp/committed
+          for yaml in cv/*.yaml; do
+            name="$(basename "$yaml" .yaml)"
+            cp "public/$name.pdf" "/tmp/committed/$name.pdf"
+          done
+          bash scripts/build-cv.sh
+
+      # Neither PDF bytes, line breaks, nor text-layer extraction order are
+      # stable across machines (font subsetting, font versions, poppler
+      # versions), so compare the multiset of words in the text layer.
+      - name: Fail if any rendered CV is out of date
+        run: |
+          normalize() { pdftotext "$1" - | tr -s '[:space:]' ' ' | sed -E 's/ ?- ?//g' | tr ' ' '\n' | grep -v '^$' | sort; }
+          status=0
+          for yaml in cv/*.yaml; do
+            name="$(basename "$yaml" .yaml)"
+            normalize "/tmp/committed/$name.pdf" > /tmp/committed.txt
+            normalize "public/$name.pdf" > /tmp/rendered.txt
+            if ! diff -u /tmp/committed.txt /tmp/rendered.txt; then
+              echo "::error::public/$name.pdf does not match cv/$name.yaml. Run 'npm run cv' and commit the result."
+              status=1
+            fi
+          done
+          exit $status

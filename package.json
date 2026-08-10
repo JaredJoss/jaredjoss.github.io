@@ -8,6 +8,7 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
+    "cv": "bash scripts/build-cv.sh",
     "preview": "vite preview"
   },
   "dependencies": {
