@@ -96,12 +96,15 @@ cv:
       - name: Shipping AI to a Million Patients Without an A/B Test
         date: June 2026
         summary: Stage talk · AI Engineer World's Fair 2026 · San Francisco
+        location: 'How Ufonia ships and keeps improving a regulated clinical voice agent without A/B testing on patients: simulate the highest-risk scenarios at scale, then improve it with reproducible, auditable prompt optimisation, using simulation as the release gate.'
       - name: 'When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions'
         date: October 2026
         summary: Oral spotlight + poster · DAIH Workshop at COLM 2026 · San Francisco
+        location: 'Shows that when a patient interrupts a clinical voice agent mid-question, it can silently drop clinically required content that cooperative transcripts hide, and introduces a way to measure how well agents recover across different types of interruption.'
       - name: 'When the Language Changes, Is It Still Safe? Multilingual Evaluation of Clinical Voice Agents'
         date: October 2026
         summary: Poster · DAIH Workshop at COLM 2026 · San Francisco
+        location: 'Shows that an agent proven safe in English can quietly degrade in other languages: simulating consultations in English, French, Polish and Urdu, emergencies are still caught but symptom-gathering and follow-up slip unevenly.'
     EDUCATION:
       - institution: Imperial College London
         area: Applied Machine Learning
@@ -211,7 +214,7 @@ design:
       main_column: "**COMPANY**\n*POSITION*\nSUMMARY\nHIGHLIGHTS"
       date_and_location_column: "DATE\n*LOCATION*"
     normal_entry:
-      main_column: "**NAME**\nSUMMARY"
+      main_column: "**NAME**\nSUMMARY\nLOCATION"
       date_and_location_column: "DATE"
     publication_entry:
       main_column: "**TITLE**\nAUTHORS\nJOURNAL"
