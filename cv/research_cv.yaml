@@ -19,18 +19,19 @@ cv:
         end_date: present
         location: London, United Kingdom
         highlights:
-          - 'Own the clinical safety-evaluation programme that gates every production release of the LLM voice agents: define the validation standards and the simulated-patient and LLM-as-judge methods it runs on, provide the evidence base for clinical safety assurance, and set the team''s research direction.'
-          - Co-developed MATRIX, a multi-agent simulation framework for safety evaluation of clinical dialogue agents; its behaviour judge matched expert-clinician hazard detection (F1 0.96) in a blinded 240-dialogue assessment, and the framework benchmarked five LLM agents across 2,100 simulated dialogues, 14 hazard scenarios, and 10 clinical domains.
-          - Built the ASR-safety evaluation behind WER is Unaware, a clinician-annotated benchmark and a GEPA-optimised LLM-as-judge that reached 90% accuracy and Cohen's kappa 0.816 at matching clinician safety assessments and showed word error rate poorly reflects clinical risk.
-          - Built the clinical-dialogue evaluation pipelines behind these systems (reference-based, simulated-patient, and LLM-as-judge methods validated against clinician assessment), spanning hazards from ASR errors to patient interruptions and multilingual interactions.
-          - Benchmark open-source, multilingual, and speech-to-text models against the clinical safety suite to determine which are cleared for production.
+          - Own the clinical safety-evaluation programme that gates every production release of the LLM voice agents; set research direction for the science team and work directly with clinicians to build the validation evidence base behind release and regulatory decisions.
+          - Co-developed MATRIX, a multi-agent simulation framework for safety evaluation of clinical dialogue agents; its behaviour judge matched expert-clinician hazard detection (F1 0.96) in a blinded 240-dialogue assessment, across 2,100 simulated dialogues, 14 hazard scenarios, and 10 clinical domains.
+          - Built the ASR-safety evaluation behind WER is Unaware, a clinician-annotated benchmark and a GEPA-optimised LLM-as-judge reaching 90% accuracy and Cohen's kappa 0.816 against clinician safety assessments.
+          - Rebuilt prompt development around DSPy, replacing manual prompt engineering with automatic optimisation (GEPA optimiser) across both the clinical voice agents and the LLM judges to make prompts reproducible and auditable.
+          - Built the safety-evaluation pipelines behind these systems (reference-based, simulated-patient, and LLM-as-judge methods), spanning hazards from ASR errors to patient interruptions and multilingual interactions.
       - company: The Awareness Company
         position: Junior Data Scientist
         start_date: 2022-09
-        end_date: 2023-07
+        end_date: 2023-09
         location: Johannesburg, South Africa
         highlights:
-          - Built computer-vision models (Azure Cognitive Services) and an energy-demand model, and designed, trained, and deployed a soil-moisture predictor and a poaching-risk model for Kafue National Park, Zambia.
+          - Worked in a cross-functional team on an AI-powered data-storytelling platform, investigating and improving the robustness of production ML models.
+          - 'Designed, trained, and deployed custom ML and computer-vision models (Azure Cognitive Services): a soil-moisture predictor, a poaching-risk model for Kafue National Park (Zambia), and an energy-demand forecaster.'
           - Used Azure OpenAI Service to fine-tune an LLM chatbot on company data, deployed to end users via an API.
       - company: Tesserae
         position: Junior Full-Stack Software Engineer
@@ -93,17 +94,14 @@ cv:
         journal: arXiv preprint, under review (2025)
     TALKS & PRESENTATIONS:
       - name: Shipping AI to a Million Patients Without an A/B Test
-        summary: AI Engineer World's Fair 2026 (stage talk)
-        highlights:
-          - AI in Healthcare Track, San Francisco, June 2026.
+        date: June 2026
+        summary: Stage talk · AI Engineer World's Fair 2026 · San Francisco
       - name: 'When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions'
-        summary: DAIH Workshop, COLM 2026 (oral spotlight + poster)
-        highlights:
-          - Deploying AI in Healthcare (DAIH) Workshop, COLM 2026, San Francisco, October 2026. Non-archival.
+        date: October 2026
+        summary: Oral spotlight + poster · DAIH Workshop at COLM 2026 · San Francisco
       - name: 'When the Language Changes, Is It Still Safe? Multilingual Evaluation of Clinical Voice Agents'
-        summary: DAIH Workshop, COLM 2026 (poster)
-        highlights:
-          - Deploying AI in Healthcare (DAIH) Workshop, COLM 2026, San Francisco, October 2026. Non-archival.
+        date: October 2026
+        summary: Poster · DAIH Workshop at COLM 2026 · San Francisco
     EDUCATION:
       - institution: Imperial College London
         area: Applied Machine Learning
@@ -127,12 +125,14 @@ cv:
     TECHNICAL SKILLS:
       - label: Languages
         details: Python, JavaScript, C++
-      - label: Technologies
-        details: PyTorch, Hugging Face, LangChain, TensorFlow, Scikit-learn, Pandas, NumPy, React.js, Django
+      - label: ML & LLMs
+        details: DSPy, PyTorch, Hugging Face (Transformers, Datasets, TRL, PEFT), LangChain, scikit-learn, Pandas, NumPy
+      - label: LLM providers & inference
+        details: OpenAI, Anthropic, Google, Llama, OpenRouter, Ollama
       - label: Developer Tools
-        details: Git, Docker, SQL (PostgreSQL, MySQL, NoSQL), High Performance Computing
+        details: Git, Docker, Weights & Biases, MLflow, SQL (PostgreSQL, MySQL, NoSQL), High Performance Computing
       - label: Cloud
-        details: AWS (Lambda, S3, SageMaker), Azure (OpenAI Service, AI Studio, Cognitive Services)
+        details: Google Cloud (Cloud Run, Vertex AI, BigQuery, Pub/Sub), AWS (Lambda, S3, SageMaker), Azure (AI Studio, Cognitive Services)
     ACHIEVEMENTS:
       - bullet: Entelect Prize, ranked 1st in final-year cohort (2021); Isazi Consulting Prize, top 5 (2020)
 design:
@@ -210,7 +210,7 @@ design:
       main_column: "**COMPANY**\n*POSITION*\nSUMMARY\nHIGHLIGHTS"
       date_and_location_column: "DATE\n*LOCATION*"
     normal_entry:
-      main_column: "**NAME** | *SUMMARY*\nHIGHLIGHTS"
+      main_column: "**NAME**\nSUMMARY"
       date_and_location_column: "DATE"
     publication_entry:
       main_column: "**TITLE**\nAUTHORS\nJOURNAL"
