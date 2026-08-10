@@ -29,7 +29,7 @@ Other scripts:
 | `npm run build:dev` | Build in development mode |
 | `npm run preview` | Serve the production build locally |
 | `npm run lint` | ESLint |
-| `npm run cv` | Render `cv/cv.yaml` to `public/cv.pdf` |
+| `npm run cv` | Render every `cv/*.yaml` to `public/<name>.pdf` |
 
 ## Content
 
@@ -49,26 +49,26 @@ Almost all page content is hardcoded as constants in [`src/pages/Index.tsx`](src
 }
 ```
 
-Static assets (`cv.pdf`, `profile.jpeg`, `photos/`, `og-image.jpg`, `robots.txt`) live in `public/` and are served from the site root.
+Static assets (`cv.pdf`, `research_cv.pdf`, `profile.jpeg`, `photos/`, `og-image.jpg`, `robots.txt`) live in `public/` and are served from the site root.
 
-## CV
+## CVs
 
-`public/cv.pdf` is generated, not hand-uploaded. The source of truth is [`cv/cv.yaml`](cv/cv.yaml), rendered by [RenderCV](https://docs.rendercv.com/) (Typst under the hood — no LaTeX toolchain needed).
+CV PDFs under `public/` are generated from YAML, not hand-uploaded. Each source file `cv/<name>.yaml` renders to `public/<name>.pdf` via [RenderCV](https://docs.rendercv.com/) (Typst under the hood — no LaTeX toolchain needed). Currently that is [`cv/research_cv.yaml`](cv/research_cv.yaml) → `public/research_cv.pdf`; add another CV by dropping a new `cv/<name>.yaml` in — no other change needed.
 
 ```sh
-npm run cv       # rewrites public/cv.pdf, ~1s
+npm run cv       # rewrites every public/<name>.pdf from cv/*.yaml, ~1s each
 ```
 
-The script creates a virtualenv in `cv/.venv` on first run and needs `uv` or Python >= 3.11. Edit the YAML, re-render, and commit both files — [`.github/workflows/cv.yml`](.github/workflows/cv.yml) re-renders on PRs and fails if the committed PDF's text no longer matches the YAML.
+The script creates a virtualenv in `cv/.venv` on first run and needs `uv` or Python >= 3.11. Edit a YAML, re-render, and commit the YAML and its PDF together — [`.github/workflows/cv.yml`](.github/workflows/cv.yml) re-renders on PRs and fails if any committed PDF's text no longer matches its YAML.
 
 ### Editing
 
-Everything above the `design:` key is content; everything below it is layout. To change the CV, edit the `cv.sections` entries — e.g. to add a job:
+Everything above the `design:` key is content; everything below it is layout. To change a CV, edit the `cv.sections` entries — e.g. to add a job:
 
 ```yaml
     EXPERIENCE:
       - company: Ufonia
-        position: Senior AI Research Engineer
+        position: Lead AI Research Engineer
         start_date: 2025-02
         end_date: present        # or a YYYY-MM date
         location: London, United Kingdom
@@ -76,9 +76,9 @@ Everything above the `design:` key is content; everything below it is layout. To
           - Developing LLM-based clinical conversational systems.
 ```
 
-Section names are arbitrary (they render verbatim, hence the all-caps keys). Entry shapes are fixed per section: `EDUCATION` uses `institution`/`area`/`degree`, `PROJECTS` and `RESEARCH & COLLABORATIONS` use `name`/`summary`, `PUBLICATIONS` uses `title`/`authors`/`journal`, `TECHNICAL SKILLS` uses `label`/`details`, and `ACHIEVEMENTS` uses `bullet`. Highlight text supports Markdown, including links: `[ASTRID](https://aclanthology.org/...)`.
+Section names are arbitrary (they render verbatim, hence the all-caps keys). Entry shapes are fixed per section: `EDUCATION` uses `institution`/`area`/`degree`, `EXPERIENCE` uses `company`/`position`, normal entries (e.g. `SELECTED RESEARCH CONTRIBUTIONS`) use `name`/`summary`, `PUBLICATIONS` uses `title`/`authors`/`journal`, `TECHNICAL SKILLS` uses `label`/`details`, and `ACHIEVEMENTS` uses `bullet`. Highlight text supports Markdown, including links: `[ASTRID](https://aclanthology.org/...)`.
 
-Then run `npm run cv` and commit `cv/cv.yaml` and `public/cv.pdf` together.
+Then run `npm run cv` and commit `cv/<name>.yaml` and `public/<name>.pdf` together.
 
 ### Layout
 

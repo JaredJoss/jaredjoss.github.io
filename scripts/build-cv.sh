@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Renders cv/cv.yaml to public/cv.pdf using RenderCV (Typst-based, no LaTeX needed).
+# Renders every cv/*.yaml to public/<name>.pdf using RenderCV (Typst-based, no LaTeX needed).
+# e.g. cv/research_cv.yaml -> public/research_cv.pdf
 # Requires either uv, or Python >= 3.11 on PATH.
 set -euo pipefail
 
@@ -22,11 +23,21 @@ if [ ! -x "$venv/bin/rendercv" ]; then
   fi
 fi
 
-"$venv/bin/rendercv" render "$repo_root/cv/cv.yaml" \
-  --output-folder "$repo_root/cv/build" \
-  --pdf-path "$repo_root/public/cv.pdf" \
-  --dont-generate-markdown \
-  --dont-generate-html \
-  --dont-generate-png
+shopt -s nullglob
+found=0
+for yaml in "$repo_root"/cv/*.yaml; do
+  found=1
+  name="$(basename "$yaml" .yaml)"
+  "$venv/bin/rendercv" render "$yaml" \
+    --output-folder "$repo_root/cv/build" \
+    --pdf-path "$repo_root/public/$name.pdf" \
+    --dont-generate-markdown \
+    --dont-generate-html \
+    --dont-generate-png
+  echo "Wrote public/$name.pdf"
+done
 
-echo "Wrote $repo_root/public/cv.pdf"
+if [ "$found" -eq 0 ]; then
+  echo "error: no cv/*.yaml files found to render." >&2
+  exit 1
+fi

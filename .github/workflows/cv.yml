@@ -1,4 +1,4 @@
-name: Check CV is up to date
+name: Check CVs are up to date
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
       - main
     paths:
       - 'cv/**'
-      - 'public/cv.pdf'
+      - 'public/*_cv.pdf'
       - 'scripts/build-cv.sh'
       - '.github/workflows/cv.yml'
   pull_request:
     paths:
       - 'cv/**'
-      - 'public/cv.pdf'
+      - 'public/*_cv.pdf'
       - 'scripts/build-cv.sh'
       - '.github/workflows/cv.yml'
 
@@ -31,20 +31,29 @@ jobs:
       - name: Install poppler-utils
         run: sudo apt-get install -y poppler-utils
 
-      - name: Render CV
+      - name: Render CVs
         run: |
-          cp public/cv.pdf /tmp/committed.pdf
+          mkdir -p /tmp/committed
+          for yaml in cv/*.yaml; do
+            name="$(basename "$yaml" .yaml)"
+            cp "public/$name.pdf" "/tmp/committed/$name.pdf"
+          done
           bash scripts/build-cv.sh
 
       # Neither PDF bytes, line breaks, nor text-layer extraction order are
       # stable across machines (font subsetting, font versions, poppler
       # versions), so compare the multiset of words in the text layer.
-      - name: Fail if public/cv.pdf is out of date
+      - name: Fail if any rendered CV is out of date
         run: |
           normalize() { pdftotext "$1" - | tr -s '[:space:]' ' ' | sed -E 's/ ?- ?//g' | tr ' ' '\n' | grep -v '^$' | sort; }
-          normalize /tmp/committed.pdf > /tmp/committed.txt
-          normalize public/cv.pdf > /tmp/rendered.txt
-          if ! diff -u /tmp/committed.txt /tmp/rendered.txt; then
-            echo "::error::public/cv.pdf does not match cv/cv.yaml. Run 'npm run cv' and commit the result."
-            exit 1
-          fi
+          status=0
+          for yaml in cv/*.yaml; do
+            name="$(basename "$yaml" .yaml)"
+            normalize "/tmp/committed/$name.pdf" > /tmp/committed.txt
+            normalize "public/$name.pdf" > /tmp/rendered.txt
+            if ! diff -u /tmp/committed.txt /tmp/rendered.txt; then
+              echo "::error::public/$name.pdf does not match cv/$name.yaml. Run 'npm run cv' and commit the result."
+              status=1
+            fi
+          done
+          exit $status

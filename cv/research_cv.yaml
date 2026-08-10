@@ -1,0 +1,217 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+cv:
+  name: Jared Joselowitz
+  location: London, United Kingdom
+  email: jaredjoss123@gmail.com
+  phone: +44 744 0408647
+  social_networks:
+    - network: LinkedIn
+      username: jaredjoselowitz
+    - network: GitHub
+      username: jaredjoss
+  sections:
+    SUMMARY:
+      - Lead AI Research Engineer owning the clinical safety-evaluation programme that gates every production release of LLM voice agents running across 200,000+ live patient calls. Leads a 4-person science team across safety-focused evaluation, multi-agent simulation, LLM-as-judge methods, and ASR robustness. First author at COLM 2025 on LLM interpretability through inverse reinforcement learning; co-author at ACL 2025 and IWSDS 2026.
+    EXPERIENCE:
+      - company: Ufonia
+        position: Lead AI Research Engineer (promoted from Senior, Apr 2026)
+        start_date: 2025-02
+        end_date: present
+        location: London, United Kingdom
+        highlights:
+          - 'Own the clinical safety-evaluation programme that gates every production release of the LLM voice agents: define the validation standards and the simulated-patient and LLM-as-judge methods it runs on, provide the evidence base for clinical safety assurance, and set the team''s research direction.'
+          - Co-developed MATRIX, a multi-agent simulation framework for safety evaluation of clinical dialogue agents; its behaviour judge matched expert-clinician hazard detection (F1 0.96) in a blinded 240-dialogue assessment, and the framework benchmarked five LLM agents across 2,100 simulated dialogues, 14 hazard scenarios, and 10 clinical domains.
+          - Built the ASR-safety evaluation behind WER is Unaware, a clinician-annotated benchmark and a GEPA-optimised LLM-as-judge that reached 90% accuracy and Cohen's kappa 0.816 at matching clinician safety assessments and showed word error rate poorly reflects clinical risk.
+          - Built the clinical-dialogue evaluation pipelines behind these systems (reference-based, simulated-patient, and LLM-as-judge methods validated against clinician assessment), spanning hazards from ASR errors to patient interruptions and multilingual interactions.
+          - Benchmark open-source, multilingual, and speech-to-text models against the clinical safety suite to determine which are cleared for production.
+      - company: The Awareness Company
+        position: Junior Data Scientist
+        start_date: 2022-09
+        end_date: 2023-07
+        location: Johannesburg, South Africa
+        highlights:
+          - Built computer-vision models (Azure Cognitive Services) and an energy-demand model, and designed, trained, and deployed a soil-moisture predictor and a poaching-risk model for Kafue National Park, Zambia.
+          - Used Azure OpenAI Service to fine-tune an LLM chatbot on company data, deployed to end users via an API.
+      - company: Tesserae
+        position: Junior Full-Stack Software Engineer
+        start_date: 2022-02
+        end_date: 2022-08
+        location: Johannesburg, South Africa
+        highlights:
+          - Worked in a five-person team on a full-stack AI annotation platform for business intelligence in the FinTech industry, across frontend (React) and backend (Django).
+          - Built end-to-end testing with Cypress and a WhatsApp annotation bot deployed on AWS Lambda.
+    PUBLICATIONS:
+      - title: 'Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning'
+        date: '[arxiv.org](https://arxiv.org/abs/2410.12491)'
+        authors:
+          - '**Jared Joselowitz**'
+          - Ritam Majumdar
+          - Arjun Jagota
+          - Matthieu Bou
+          - Nyal Patel
+          - Satyapriya Krishna
+          - Sonali Parbhoo
+        journal: Conference on Language Modeling (COLM 2025). [Code](https://github.com/ai4ai-lab/irl_for_llms)
+      - title: 'WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding in Patient Facing Dialogue'
+        date: '[aclanthology.org](https://aclanthology.org/2026.iwsds-1.39/)'
+        authors:
+          - Zachary Ellis
+          - '**Jared Joselowitz**'
+          - Yash Deo
+          - Yajie He
+          - Anna Kalygina
+          - Aisling Higham
+          - Mana Rahimzadeh
+          - Yan Jia
+          - Ibrahim Habli
+          - Ernest Lim
+        journal: International Workshop on Spoken Dialogue Systems (IWSDS 2026), Oral Presentation. [Code](https://github.com/Ufonia/wer-is-unaware)
+      - title: 'ASTRID: An Automated and Scalable TRIaD for the Evaluation of RAG-based Clinical Question Answering Systems'
+        date: '[aclanthology.org](https://aclanthology.org/2025.findings-acl.857/)'
+        authors:
+          - Yajie Vera He
+          - Mohita Chowdhury
+          - '**Jared Joselowitz**'
+          - Aisling Higham
+          - Ernest Lim
+        journal: Findings of the Association for Computational Linguistics (ACL 2025)
+      - title: 'MATRIX: Multi-Agent simulaTion fRamework for safe Interactions and conteXtual clinical conversational evaluation'
+        date: '[arxiv.org](https://arxiv.org/abs/2508.19163)'
+        authors:
+          - Ernest Lim
+          - Yajie Vera He
+          - '**Jared Joselowitz**'
+          - Kate Preston
+          - Mohita Chowdhury
+          - Louis Williams
+          - Aisling Higham
+          - Katrina Mason
+          - Mariane Melo
+          - Tom Lawton
+          - Yan Jia
+          - Ibrahim Habli
+        journal: arXiv preprint, under review (2025)
+    TALKS & PRESENTATIONS:
+      - name: Shipping AI to a Million Patients Without an A/B Test
+        summary: AI Engineer World's Fair 2026 (stage talk)
+        highlights:
+          - AI in Healthcare Track, San Francisco, June 2026.
+      - name: 'When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions'
+        summary: DAIH Workshop, COLM 2026 (oral spotlight + poster)
+        highlights:
+          - Deploying AI in Healthcare (DAIH) Workshop, COLM 2026, San Francisco, October 2026. Non-archival.
+      - name: 'When the Language Changes, Is It Still Safe? Multilingual Evaluation of Clinical Voice Agents'
+        summary: DAIH Workshop, COLM 2026 (poster)
+        highlights:
+          - Deploying AI in Healthcare (DAIH) Workshop, COLM 2026, San Francisco, October 2026. Non-archival.
+    EDUCATION:
+      - institution: Imperial College London
+        area: Applied Machine Learning
+        degree: MSc
+        start_date: 2023
+        end_date: 2024
+        location: London, United Kingdom
+        highlights:
+          - 'Grade: Distinction.'
+          - 'Relevant coursework: Machine Learning, Deep Learning (CNN, RNN, RL, autoencoders, VAE, GAN), Advanced Deep Learning Systems, Topics in Large Dimensional Data Processing, Computer Vision and Pattern Recognition, Optimization.'
+          - 'Dissertation (Advisor: Dr. Sonali Parbhoo): a max-margin inverse RL method to recover the reward models of RLHF-tuned LLMs, reaching ~80% accuracy at recovering the ground-truth objective; models fine-tuned on the recovered reward showed lower toxicity than standard RLHF. Published at COLM 2025.'
+      - institution: University of the Witwatersrand
+        area: Electrical (Information) Engineering
+        degree: BSc
+        start_date: 2018
+        end_date: 2021
+        location: Johannesburg, South Africa
+        highlights:
+          - 'Grade: Distinction; ranked 1st in the final year.'
+          - 'Final-year thesis (Advisor: Dr. Vered Aharonson): Quantifying the Effectiveness of Scientific Speeches on Climate Change, marked 97%. Led to four peer-reviewed publications.'
+    TECHNICAL SKILLS:
+      - label: Languages
+        details: Python, JavaScript, C++
+      - label: Technologies
+        details: PyTorch, Hugging Face, LangChain, TensorFlow, Scikit-learn, Pandas, NumPy, React.js, Django
+      - label: Developer Tools
+        details: Git, Docker, SQL (PostgreSQL, MySQL, NoSQL), High Performance Computing
+      - label: Cloud
+        details: AWS (Lambda, S3, SageMaker), Azure (OpenAI Service, AI Studio, Cognitive Services)
+    ACHIEVEMENTS:
+      - bullet: Entelect Prize, ranked 1st in final-year cohort (2021); Isazi Consulting Prize, top 5 (2020)
+design:
+  theme: classic
+  page:
+    size: us-letter
+    top_margin: 1.3cm
+    bottom_margin: 1.3cm
+    left_margin: 1.5cm
+    right_margin: 1.5cm
+    show_footer: false
+    show_top_note: false
+  colors:
+    body: rgb(0,0,0)
+    name: rgb(0,0,0)
+    headline: rgb(0,0,0)
+    connections: rgb(0,0,0)
+    section_titles: rgb(0,0,0)
+    links: rgb(40,72,130)
+  typography:
+    line_spacing: 0.55em
+    alignment: left
+    font_family:
+      body: Lato
+      name: Lato
+      headline: Lato
+      connections: Lato
+      section_titles: Lato
+    font_size:
+      body: 9pt
+      name: 20pt
+      connections: 9pt
+      section_titles: 1.05em
+    bold:
+      name: true
+      section_titles: true
+  links:
+    underline: false
+    show_external_link_icon: false
+  header:
+    alignment: center
+    space_below_name: 0.25cm
+    space_below_connections: 0.35cm
+    connections:
+      show_icons: true
+      separator: ""
+      space_between_connections: 0.7cm
+  section_titles:
+    type: with_full_line
+    line_thickness: 0.6pt
+    space_above: 0.4cm
+    space_below: 0.2cm
+  sections:
+    space_between_regular_entries: 0.35cm
+    space_between_text_based_entries: 0.12cm
+    show_time_spans_in: []
+  entries:
+    date_and_location_width: 4.6cm
+    side_space: 0cm
+    short_second_row: false
+    summary:
+      space_above: 0.08cm
+    highlights:
+      bullet: "•"
+      space_left: 0.35cm
+      space_above: 0.08cm
+      space_between_items: 0.08cm
+      space_between_bullet_and_text: 0.3em
+  templates:
+    education_entry:
+      main_column: "**INSTITUTION**\n*DEGREE_WITH_AREA*\nSUMMARY\nHIGHLIGHTS"
+      degree_column: null
+      date_and_location_column: "DATE\n*LOCATION*"
+    experience_entry:
+      main_column: "**COMPANY**\n*POSITION*\nSUMMARY\nHIGHLIGHTS"
+      date_and_location_column: "DATE\n*LOCATION*"
+    normal_entry:
+      main_column: "**NAME** | *SUMMARY*\nHIGHLIGHTS"
+      date_and_location_column: "DATE"
+    publication_entry:
+      main_column: "**TITLE**\nAUTHORS\nJOURNAL"
+      date_and_location_column: "DATE"
