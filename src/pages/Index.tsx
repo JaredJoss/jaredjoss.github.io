@@ -339,7 +339,7 @@ const Index = () => {
           </div>
           <div className="md:col-span-1 flex flex-col items-center justify-between">
             <img src="/profile.jpeg" alt="Jared Joselowitz" className="rounded-lg w-64 h-64 object-cover mb-4"/>
-            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 text-sm text-muted-foreground border border-border/70 rounded-xl px-4 py-2 bg-background/60 transition-colors duration-200">
+            <a href="/research_cv.pdf" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 text-sm text-muted-foreground border border-border/70 rounded-xl px-4 py-2 bg-background/60 transition-colors duration-200">
               Download CV
             </a>
           </div>
