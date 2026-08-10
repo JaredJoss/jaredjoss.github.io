@@ -177,6 +177,7 @@ design:
     space_below_name: 0.25cm
     space_below_connections: 0.35cm
     connections:
+      phone_number_format: international
       show_icons: true
       separator: ""
       space_between_connections: 0.7cm
