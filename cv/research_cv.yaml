@@ -11,7 +11,7 @@ cv:
       username: jaredjoss
   sections:
     SUMMARY:
-      - Lead AI Research Engineer owning the clinical safety-evaluation programme that gates every production release of LLM voice agents running across 200,000+ live patient calls. Leads a 4-person science team across safety-focused evaluation, multi-agent simulation, LLM-as-judge methods, and ASR robustness. First author at COLM 2025 on LLM interpretability through inverse reinforcement learning; co-author at ACL 2025 and IWSDS 2026.
+      - Lead AI Research Engineer owning the clinical safety-evaluation programme that gates every production release of LLM voice agents running across 200,000+ live patient calls. Leads a 4-person science team across safety-focused evaluation, multi-agent simulation, LLM-as-judge methods, and ASR robustness. MSc in Applied Machine Learning (Distinction), Imperial College London; first author at COLM 2025 on LLM interpretability through inverse reinforcement learning, co-author at ACL 2025 and IWSDS 2026.
     EXPERIENCE:
       - company: Ufonia
         position: Lead AI Research Engineer (promoted from Senior, Apr 2026)
