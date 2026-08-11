@@ -214,7 +214,7 @@ design:
       main_column: "**COMPANY**\n*POSITION*\nSUMMARY\nHIGHLIGHTS"
       date_and_location_column: "DATE\n*LOCATION*"
     normal_entry:
-      main_column: "**NAME**\nSUMMARY\nLOCATION"
+      main_column: "**NAME**\n*SUMMARY*\nLOCATION"
       date_and_location_column: "DATE"
     publication_entry:
       main_column: "**TITLE**\nAUTHORS\nJOURNAL"
