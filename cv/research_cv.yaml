@@ -95,7 +95,7 @@ cv:
     TALKS & PRESENTATIONS:
       - name: Shipping AI to a Million Patients Without an A/B Test
         date: June 2026
-        summary: Stage talk · AI Engineer World's Fair 2026 · San Francisco
+        summary: 'Stage talk · AI Engineer World''s Fair 2026 · San Francisco. [YouTube](https://youtu.be/McknwOzbmyg)'
         location: 'How Ufonia ships and keeps improving a regulated clinical voice agent without A/B testing on patients: simulate the highest-risk scenarios at scale, then improve it with reproducible, auditable prompt optimisation, using simulation as the release gate.'
       - name: 'When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions'
         date: October 2026
