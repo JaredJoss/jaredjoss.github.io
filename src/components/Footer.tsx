@@ -27,21 +27,35 @@ const Footer = () => {
   const [track, setTrack] = useState<LastFmTrack | null>(null);
   const [visitCount, setVisitCount] = useState<number | null>(null);
 
-  // Track page visits using counterapi.dev
   useEffect(() => {
-    const trackVisit = async () => {
+    const fetchVisitCount = async () => {
       try {
-        // Increment the counter
         const response = await fetch(
-          "https://api.counterapi.dev/v1/jaredjoselowitz/visits/up"
+          "https://jossy.goatcounter.com/counter/%2F.json"
         );
-        const data = await response.json();
-        setVisitCount(data.count);
+        const data: { count?: unknown } = await response.json();
+
+        if (
+          (!response.ok && response.status !== 404) ||
+          typeof data.count !== "string"
+        ) {
+          throw new Error(`GoatCounter returned ${response.status}`);
+        }
+
+        const count = Number(data.count.replace(/,/g, ""));
+
+        if (!Number.isSafeInteger(count) || count < 0) {
+          throw new Error("GoatCounter returned an invalid count");
+        }
+
+        setVisitCount(count);
       } catch (error) {
-        console.error("Failed to track visit:", error);
+        setVisitCount(null);
+        console.error("Failed to fetch visit count:", error);
       }
     };
-    trackVisit();
+
+    fetchVisitCount();
   }, []);
 
   useEffect(() => {
@@ -112,17 +126,19 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="text-right space-y-0.5 sm:space-y-1 group/visits shrink-0">
-        <div className="text-muted-foreground text-xs opacity-0 group-hover/visits:opacity-100 transition-opacity duration-200 hidden sm:block">
-          visits
+      {visitCount !== null && (
+        <div className="text-right space-y-0.5 sm:space-y-1 group/visits shrink-0">
+          <div className="text-muted-foreground text-xs opacity-0 group-hover/visits:opacity-100 transition-opacity duration-200 hidden sm:block">
+            visits
+          </div>
+          <div className="text-muted-foreground">
+            <ScrambleText
+              text={String(visitCount).padStart(6, "0")}
+              className="text-primary font-medium tracking-wider"
+            />
+          </div>
         </div>
-        <div className="text-muted-foreground">
-          <ScrambleText 
-            text={visitCount !== null ? String(visitCount).padStart(6, "0") : "------"} 
-            className="text-primary font-medium tracking-wider" 
-          />
-        </div>
-      </div>
+      )}
     </footer>
   );
 };
