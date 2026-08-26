@@ -151,10 +151,10 @@ design:
   theme: classic
   page:
     size: us-letter
-    top_margin: 1.05cm
-    bottom_margin: 1.05cm
-    left_margin: 1.35cm
-    right_margin: 1.35cm
+    top_margin: 0.85cm
+    bottom_margin: 0.65cm
+    left_margin: 1.2cm
+    right_margin: 1.2cm
     show_footer: false
     show_top_note: false
   colors:
@@ -165,11 +165,11 @@ design:
     section_titles: rgb(0,0,0)
     links: rgb(40,72,130)
   sections:
-    space_between_regular_entries: 0.19cm
-    space_between_text_based_entries: 0.12cm
+    space_between_regular_entries: 0.01cm
+    space_between_text_based_entries: 0.02cm
     show_time_spans_in: []
   typography:
-    line_spacing: 0.55em
+    line_spacing: 0.28em
     alignment: left
     date_and_location_column_alignment: left
     font_family:
@@ -179,10 +179,10 @@ design:
       connections: Lato
       section_titles: Lato
     font_size:
-      body: 9pt
+      body: 8pt
       name: 20pt
-      connections: 9pt
-      section_titles: 1.05em
+      connections: 8pt
+      section_titles: 0.95em
     bold:
       name: true
       section_titles: true
@@ -191,30 +191,30 @@ design:
     show_external_link_icon: false
   header:
     alignment: center
-    space_below_name: 0.15cm
-    space_below_connections: 0.22cm
+    space_below_name: 0.02cm
+    space_below_connections: 0.05cm
     connections:
       phone_number_format: international
       show_icons: true
       separator: ""
-      space_between_connections: 0.45cm
+      space_between_connections: 0.22cm
   section_titles:
     type: with_full_line
     line_thickness: 0.6pt
-    space_above: 0.2cm
-    space_below: 0.1cm
+    space_above: 0.08cm
+    space_below: 0.02cm
   entries:
-    date_and_location_width: 2.6cm
+    date_and_location_width: 3.8cm
     side_space: 0cm
     short_second_row: false
     summary:
-      space_above: 0.08cm
+      space_above: 0.015cm
     highlights:
       bullet: "•"
-      space_left: 0.35cm
-      space_above: 0.08cm
-      space_between_items: 0.08cm
-      space_between_bullet_and_text: 0.3em
+      space_left: 0.18cm
+      space_above: 0.03cm
+      space_between_items: 0.03cm
+      space_between_bullet_and_text: 0.2em
   templates:
     education_entry:
       main_column: "**INSTITUTION**\n*DEGREE_WITH_AREA*\nSUMMARY\nHIGHLIGHTS"
