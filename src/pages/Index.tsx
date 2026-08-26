@@ -33,6 +33,20 @@ type Publication = {
 const PUBLICATIONS: Publication[] = [
   {
     year: "2026",
+    venue: "EMNLP 2026 Findings",
+    title: "When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions",
+    description: (
+      <>
+        Evaluating whether <span className="text-foreground/80 font-medium">clinical voice agents</span> can recover when patients{" "}
+        <span className="text-foreground/80 font-medium">interrupt</span> mid-utterance, using conversation-analytic interruption categories and{" "}
+        <span className="text-foreground/80 font-medium">LLM judges</span> to score recovery against required clinical content.
+      </>
+    ),
+    tags: ["#VoiceAI", "#Clinical", "#Safety"],
+    status: "Published",
+  },
+  {
+    year: "2026",
     venue: "IWSDS 2026",
     title: "WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding",
     description: (
