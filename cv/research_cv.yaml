@@ -151,10 +151,10 @@ design:
   theme: classic
   page:
     size: us-letter
-    top_margin: 1.3cm
-    bottom_margin: 1.3cm
-    left_margin: 1.5cm
-    right_margin: 1.5cm
+    top_margin: 1.05cm
+    bottom_margin: 1.05cm
+    left_margin: 1.35cm
+    right_margin: 1.35cm
     show_footer: false
     show_top_note: false
   colors:
@@ -164,9 +164,14 @@ design:
     connections: rgb(0,0,0)
     section_titles: rgb(0,0,0)
     links: rgb(40,72,130)
+  sections:
+    space_between_regular_entries: 0.19cm
+    space_between_text_based_entries: 0.12cm
+    show_time_spans_in: []
   typography:
     line_spacing: 0.55em
     alignment: left
+    date_and_location_column_alignment: left
     font_family:
       body: Lato
       name: Lato
@@ -186,24 +191,20 @@ design:
     show_external_link_icon: false
   header:
     alignment: center
-    space_below_name: 0.25cm
-    space_below_connections: 0.35cm
+    space_below_name: 0.15cm
+    space_below_connections: 0.22cm
     connections:
       phone_number_format: international
       show_icons: true
       separator: ""
-      space_between_connections: 0.7cm
+      space_between_connections: 0.45cm
   section_titles:
     type: with_full_line
     line_thickness: 0.6pt
-    space_above: 0.4cm
-    space_below: 0.2cm
-  sections:
-    space_between_regular_entries: 0.35cm
-    space_between_text_based_entries: 0.12cm
-    show_time_spans_in: []
+    space_above: 0.2cm
+    space_below: 0.1cm
   entries:
-    date_and_location_width: 4.6cm
+    date_and_location_width: 2.6cm
     side_space: 0cm
     short_second_row: false
     summary:
