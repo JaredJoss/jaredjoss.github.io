@@ -478,12 +478,12 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
           {PHOTOS.map((photo, index) => (
-            <div key={index} className="photo-card group">
-              <img 
-                src={photo.src} 
-                className="w-full h-64 sm:h-80 object-cover"
+            <div key={index} className="photo-card group mb-4 break-inside-avoid">
+              <img
+                src={photo.src}
+                className="w-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
                 <p className="text-primary text-sm">{photo.meta}</p>
