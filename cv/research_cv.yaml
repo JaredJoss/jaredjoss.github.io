@@ -43,6 +43,7 @@ cv:
           - Built end-to-end testing with Cypress and a WhatsApp annotation bot deployed on AWS Lambda.
     PUBLICATIONS:
       - title: 'When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions'
+        date: '[arxiv.org](https://arxiv.org/abs/2608.29241)'
         authors:
           - Zachary Ellis
           - Spencer Hazel
