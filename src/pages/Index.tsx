@@ -43,6 +43,7 @@ const PUBLICATIONS: Publication[] = [
       </>
     ),
     tags: ["#VoiceAI", "#Clinical", "#Safety"],
+    link: "https://arxiv.org/abs/2608.29241",
     status: "Published",
   },
   {
