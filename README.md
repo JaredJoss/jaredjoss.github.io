@@ -33,13 +33,14 @@ Other scripts:
 
 ## Content
 
-Almost all page content is hardcoded as constants in [`src/pages/Index.tsx`](src/pages/Index.tsx) — the cycling job titles, publications, experience, and photo grid. To add a publication, append to `PUBLICATIONS`:
+Almost all page content is hardcoded as constants in [`src/pages/Index.tsx`](src/pages/Index.tsx) — the cycling job titles, publications, talks, experience, and photo grid. To add a publication, append to `PUBLICATIONS`:
 
 ```ts
 {
   year: "2026",
   venue: "IWSDS 2026",
   title: "...",
+  authors: ["A. Author", "J. Joselowitz"],  // "J. Joselowitz" is highlighted
   description: <>...</>,
   tags: ["#ASR", "#Clinical"],
   link: "https://arxiv.org/abs/...",
@@ -102,7 +103,7 @@ VITE_LASTFM_API_KEY=...
 VITE_LASTFM_USERNAME=...
 ```
 
-Both are inlined into the client bundle at build time, so treat the key as public. The footer's visit counter uses [counterapi.dev](https://counterapi.dev/) and needs no configuration.
+Both are inlined into the client bundle at build time, so treat the key as public. The footer's visit counter uses [GoatCounter](https://www.goatcounter.com/) (`jossy.goatcounter.com`) and needs no configuration.
 
 ## Deployment
 

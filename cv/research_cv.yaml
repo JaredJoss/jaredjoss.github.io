@@ -3,7 +3,6 @@ cv:
   name: Jared Joselowitz
   location: London, United Kingdom
   email: jaredjoss123@gmail.com
-  phone: +44 744 0408647
   social_networks:
     - network: LinkedIn
       username: jaredjoselowitz
@@ -11,7 +10,7 @@ cv:
       username: jaredjoss
   sections:
     SUMMARY:
-      - Lead AI Research Engineer owning the clinical safety-evaluation programme that gates every production release of LLM voice agents running across 200,000+ live patient calls. Leads a 4-person science team across safety-focused evaluation, multi-agent simulation, LLM-as-judge methods, and ASR robustness. MSc in Applied Machine Learning (Distinction), Imperial College London; first author at COLM 2025 on LLM interpretability through inverse reinforcement learning, co-author at ACL 2025, EMNLP 2026 and IWSDS 2026.
+      - Lead AI Research Engineer owning the clinical safety-evaluation programme that gates every production release of LLM voice agents running across 200,000+ live patient calls. Leads a 4-person science team across safety-focused evaluation, multi-agent simulation, LLM-as-judge methods, and ASR robustness. MSc in Applied Machine Learning (Distinction), Imperial College London; first author at COLM 2025 on LLM interpretability through inverse reinforcement learning, co-author at ACL 2025, EMNLP 2026, ML4H 2026 and IWSDS 2026.
     EXPERIENCE:
       - company: Ufonia
         position: Lead AI Research Engineer (promoted from Senior, Apr 2026)
@@ -42,32 +41,71 @@ cv:
           - Worked in a five-person team on a full-stack AI annotation platform for business intelligence in the FinTech industry, across frontend (React) and backend (Django).
           - Built end-to-end testing with Cypress and a WhatsApp annotation bot deployed on AWS Lambda.
     PUBLICATIONS:
+      - title: 'From Text to Voice: How Real-Time Pipelines Change Interruption Recovery in Cascaded Clinical Agents'
+        date: '[openreview.net](https://openreview.net/forum?id=ez6dvTCMby)'
+        authors:
+          - Zachary Ellis
+          - Samuel Thio
+          - Yuxiang Zhou
+          - Yajie Vera He
+          - Annika Michael
+          - '#underline[Jared Joselowitz]'
+        journal: 'Real-Time Conversational Agents (RTCA) Workshop at NeurIPS 2026, **Oral**.'
+      - title: 'Does the Voice Matter? Evaluating Frustration Detection on Deployed Clinical Voice-Agent Calls'
+        date: '[arxiv.org](https://arxiv.org/abs/2611.21001)'
+        authors:
+          - Annika Michael
+          - Zachary Ellis
+          - Yuxiang Zhou
+          - Samuel Thio
+          - Yajie Vera He
+          - Spencer Hazel
+          - '#underline[Jared Joselowitz]'
+        journal: 'Machine Learning for Health (ML4H 2026), Proceedings. Also at the Generative AI for Health (GenAI4Health) Workshop at NeurIPS 2026.'
+      - title: 'Same Eye, Different Scanner: A Decision-Reliability Benchmark for Frontier VLMs and OCT Foundation Models in Glaucoma'
+        date: '[openreview.net](https://openreview.net/forum?id=1I9Pfkv8dY)'
+        authors:
+          - Hao Li
+          - '#underline[Jared Joselowitz]'
+          - Zachary Ellis
+          - Yuxiang Zhou
+          - Samuel Thio
+          - Aisling Higham
+          - Yajie Vera He
+        journal: 'Grounded and Faithful Vision-Language Models for Real-World Deployment (VLM4RWD) Workshop at NeurIPS 2026.'
+      - title: 'The Camera, the Split, and the Label: A Three-Check Audit of Glaucoma-Progression Prediction'
+        date: '[openreview.net](https://openreview.net/forum?id=AJbpzv4COc)'
+        authors:
+          - Hao Li
+          - '#underline[Jared Joselowitz]'
+          - Zachary Ellis
+          - Yuxiang Zhou
+          - Samuel Thio
+          - Aisling Higham
+          - Yajie Vera He
+        journal: 'Can We Trust AI Evaluation? (TAE) Workshop at NeurIPS 2026.'
       - title: 'When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions'
-        date: '[arxiv.org](https://arxiv.org/abs/2608.29241)'
+        date: '[aclanthology.org](https://aclanthology.org/2026.findings-emnlp.2456/)'
         authors:
           - Zachary Ellis
           - Spencer Hazel
           - Adam Brandt
           - Ernest Lim
           - Yajie Vera He
-          - '**Jared Joselowitz**'
-        journal: 'Findings of the Association for Computational Linguistics: EMNLP 2026.'
-      - title: 'Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning'
-        date: '[arxiv.org](https://arxiv.org/abs/2410.12491)'
+          - '#underline[Jared Joselowitz]'
+        journal: 'Findings of the Association for Computational Linguistics: EMNLP 2026. Also presented as an **Oral spotlight** at the Deploying AI in Healthcare (DAIH) Workshop at COLM 2026.'
+      - title: 'When the Language Changes, Is It Still Safe? Multilingual Evaluation of Clinical Voice Agents'
+        date: '[openreview.net](https://openreview.net/forum?id=mfgdFCAplv)'
         authors:
-          - '**Jared Joselowitz**'
-          - Ritam Majumdar
-          - Arjun Jagota
-          - Matthieu Bou
-          - Nyal Patel
-          - Satyapriya Krishna
-          - Sonali Parbhoo
-        journal: Conference on Language Modeling (COLM 2025). [Code](https://github.com/ai4ai-lab/irl_for_llms)
+          - Zachary Ellis
+          - '#underline[Jared Joselowitz]'
+          - Yajie Vera He
+        journal: 'Deploying AI in Healthcare (DAIH) Workshop at COLM 2026.'
       - title: 'WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding in Patient Facing Dialogue'
         date: '[aclanthology.org](https://aclanthology.org/2026.iwsds-1.39/)'
         authors:
           - Zachary Ellis
-          - '**Jared Joselowitz**'
+          - '#underline[Jared Joselowitz]'
           - Yash Deo
           - Yajie He
           - Anna Kalygina
@@ -76,13 +114,34 @@ cv:
           - Yan Jia
           - Ibrahim Habli
           - Ernest Lim
-        journal: International Workshop on Spoken Dialogue Systems (IWSDS 2026), Oral Presentation. [Code](https://github.com/Ufonia/wer-is-unaware)
+        journal: International Workshop on Spoken Dialogue Systems (IWSDS 2026), **Oral**. [Code](https://github.com/Ufonia/wer-is-unaware)
+      - title: 'Empathy as Interactional Accomplishment in Clinical Interactions with a Conversational Agent'
+        date: '[aclanthology.org](https://aclanthology.org/2026.healing-1.25/)'
+        authors:
+          - Spencer Hazel
+          - Adam Brandt
+          - Yajie Vera He
+          - Ernest Lim
+          - '#underline[Jared Joselowitz]'
+          - Zachary Ellis
+        journal: 'Workshop on Linguistic Analysis for Health (HeaLing) at EACL 2026.'
+      - title: 'Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning'
+        date: '[arxiv.org](https://arxiv.org/abs/2410.12491)'
+        authors:
+          - '#underline[Jared Joselowitz]'
+          - Ritam Majumdar
+          - Arjun Jagota
+          - Matthieu Bou
+          - Nyal Patel
+          - Satyapriya Krishna
+          - Sonali Parbhoo
+        journal: Conference on Language Modeling (COLM 2025). [Code](https://github.com/ai4ai-lab/irl_for_llms)
       - title: 'ASTRID: An Automated and Scalable TRIaD for the Evaluation of RAG-based Clinical Question Answering Systems'
         date: '[aclanthology.org](https://aclanthology.org/2025.findings-acl.857/)'
         authors:
           - Yajie Vera He
           - Mohita Chowdhury
-          - '**Jared Joselowitz**'
+          - '#underline[Jared Joselowitz]'
           - Aisling Higham
           - Ernest Lim
         journal: Findings of the Association for Computational Linguistics (ACL 2025)
@@ -91,7 +150,7 @@ cv:
         authors:
           - Ernest Lim
           - Yajie Vera He
-          - '**Jared Joselowitz**'
+          - '#underline[Jared Joselowitz]'
           - Kate Preston
           - Mohita Chowdhury
           - Louis Williams
@@ -101,20 +160,12 @@ cv:
           - Tom Lawton
           - Yan Jia
           - Ibrahim Habli
-        journal: arXiv preprint, under review (2025)
-    TALKS & PRESENTATIONS:
+        journal: arXiv preprint (2025)
+    TALKS:
       - name: Shipping AI to a Million Patients Without an A/B Test
         date: June 2026
         summary: 'Stage talk · AI Engineer World''s Fair 2026 · San Francisco. [YouTube](https://youtu.be/McknwOzbmyg)'
         location: 'How Ufonia ships and keeps improving a regulated clinical voice agent without A/B testing on patients: simulate the highest-risk scenarios at scale, then improve it with reproducible, auditable prompt optimisation, using simulation as the release gate.'
-      - name: 'When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions'
-        date: October 2026
-        summary: Oral spotlight + poster · DAIH Workshop at COLM 2026 · San Francisco
-        location: 'Shows that when a patient interrupts a clinical voice agent mid-question, it can silently drop clinically required content that cooperative transcripts hide, and introduces a way to measure how well agents recover across different types of interruption.'
-      - name: 'When the Language Changes, Is It Still Safe? Multilingual Evaluation of Clinical Voice Agents'
-        date: October 2026
-        summary: Poster · DAIH Workshop at COLM 2026 · San Francisco
-        location: 'Shows that an agent proven safe in English can quietly degrade in other languages: simulating consultations in English, French, Polish and Urdu, emergencies are still caught but symptom-gathering and follow-up slip unevenly.'
     EDUCATION:
       - institution: Imperial College London
         area: Applied Machine Learning
@@ -151,11 +202,11 @@ cv:
 design:
   theme: classic
   page:
-    size: us-letter
-    top_margin: 0.7cm
-    bottom_margin: 0.9cm
-    left_margin: 1.2cm
-    right_margin: 1.2cm
+    size: a4
+    top_margin: 1.2cm
+    bottom_margin: 1.2cm
+    left_margin: 1.5cm
+    right_margin: 1.5cm
     show_footer: false
     show_top_note: false
   colors:
@@ -175,9 +226,9 @@ design:
       connections: Lato
       section_titles: Lato
     font_size:
-      body: 9pt
+      body: 9.5pt
       name: 20pt
-      connections: 9pt
+      connections: 9.5pt
       section_titles: 1.05em
     bold:
       name: true

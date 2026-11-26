@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { Fragment, useState, type ReactNode } from "react";
 import ExperienceItem from "@/components/ExperienceItem";
 import SocialLink from "@/components/SocialLink";
 import Footer from "@/components/Footer";
@@ -18,23 +18,93 @@ const TITLES = [
   "clinical ai",
 ];
 
+// Shown highlighted in each author line.
+const ME = "J. Joselowitz";
+
 type Publication = {
   year: string;
   venue: string;
   title: string;
+  authors: string[];
   description: ReactNode;
   tags: string[];
   link: string;
   status: string;
-  presentation?: "Oral" | "Poster";
+  presentation?: string;
   codeLink?: string;
 };
 
 const PUBLICATIONS: Publication[] = [
   {
     year: "2026",
+    venue: "RTCA Workshop @ NeurIPS 2026",
+    title: "From Text to Voice: How Real-Time Pipelines Change Interruption Recovery in Cascaded Clinical Agents",
+    authors: ["Z. Ellis", "S. Thio", "Y. Zhou", "Y. V. He", "A. Michael", "J. Joselowitz"],
+    description: (
+      <>
+        Replays the same clinical <span className="text-foreground/80 font-medium">interruption</span> in text and through a live{" "}
+        <span className="text-foreground/80 font-medium">cascaded voice pipeline</span>, and finds that one or two words committed after the patient starts speaking can flip the{" "}
+        <span className="text-foreground/80 font-medium">safety verdict</span>.
+      </>
+    ),
+    tags: ["#VoiceAI", "#Clinical", "#Safety"],
+    link: "https://openreview.net/forum?id=ez6dvTCMby",
+    status: "Published",
+    presentation: "Oral",
+  },
+  {
+    year: "2026",
+    venue: "ML4H 2026 · GenAI4Health @ NeurIPS 2026",
+    title: "Does the Voice Matter? Evaluating Frustration Detection on Deployed Clinical Voice-Agent Calls",
+    authors: ["A. Michael", "Z. Ellis", "Y. Zhou", "S. Thio", "Y. V. He", "S. Hazel", "J. Joselowitz"],
+    description: (
+      <>
+        Tests per-turn <span className="text-foreground/80 font-medium">frustration detection</span> on real calls from a deployed clinical voice agent. About 59% of patient turns are{" "}
+        <span className="text-foreground/80 font-medium">one or two words</span>, where transcript-only detection does not exclude chance, and whether{" "}
+        <span className="text-foreground/80 font-medium">audio</span> helps depends on the model and the instruction.
+      </>
+    ),
+    tags: ["#VoiceAI", "#Clinical", "#Evaluation"],
+    link: "https://arxiv.org/abs/2611.21001",
+    status: "Published",
+  },
+  {
+    year: "2026",
+    venue: "VLM4RWD Workshop @ NeurIPS 2026",
+    title: "Same Eye, Different Scanner: A Decision-Reliability Benchmark for Frontier VLMs and OCT Foundation Models in Glaucoma",
+    authors: ["H. Li", "J. Joselowitz", "Z. Ellis", "Y. Zhou", "S. Thio", "A. Higham", "Y. V. He"],
+    description: (
+      <>
+        Benchmarks whether <span className="text-foreground/80 font-medium">frontier VLMs</span> and{" "}
+        <span className="text-foreground/80 font-medium">OCT foundation models</span> keep the same glaucoma decision for the same eye when the{" "}
+        <span className="text-foreground/80 font-medium">scanner changes</span>, scoring decision flips, sensitivity change and calibration.
+      </>
+    ),
+    tags: ["#VLM", "#Ophthalmology", "#Evaluation"],
+    link: "https://openreview.net/forum?id=1I9Pfkv8dY",
+    status: "Published",
+  },
+  {
+    year: "2026",
+    venue: "TAE Workshop @ NeurIPS 2026",
+    title: "The Camera, the Split, and the Label: A Three-Check Audit of Glaucoma-Progression Prediction",
+    authors: ["H. Li", "J. Joselowitz", "Z. Ellis", "Y. Zhou", "S. Thio", "A. Higham", "Y. V. He"],
+    description: (
+      <>
+        Audits <span className="text-foreground/80 font-medium">glaucoma-progression</span> results on the public GRAPE benchmark with{" "}
+        <span className="text-foreground/80 font-medium">three checks</span>: a device-only baseline, a patient-grouped split and an input-label overlap test. At this sample size, none of the reported numbers can be distinguished from a{" "}
+        <span className="text-foreground/80 font-medium">trivial baseline</span>.
+      </>
+    ),
+    tags: ["#Evaluation", "#Ophthalmology", "#Reproducibility"],
+    link: "https://openreview.net/forum?id=AJbpzv4COc",
+    status: "Published",
+  },
+  {
+    year: "2026",
     venue: "EMNLP 2026 Findings",
     title: "When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions",
+    authors: ["Z. Ellis", "S. Hazel", "A. Brandt", "E. Lim", "Y. V. He", "J. Joselowitz"],
     description: (
       <>
         Evaluating whether <span className="text-foreground/80 font-medium">clinical voice agents</span> can recover when patients{" "}
@@ -43,13 +113,31 @@ const PUBLICATIONS: Publication[] = [
       </>
     ),
     tags: ["#VoiceAI", "#Clinical", "#Safety"],
-    link: "https://arxiv.org/abs/2608.29241",
+    link: "https://aclanthology.org/2026.findings-emnlp.2456/",
+    status: "Published",
+    presentation: "Oral at DAIH @ COLM 2026",
+  },
+  {
+    year: "2026",
+    venue: "DAIH Workshop @ COLM 2026",
+    title: "When the Language Changes, Is It Still Safe? Multilingual Evaluation of Clinical Voice Agents",
+    authors: ["Z. Ellis", "J. Joselowitz", "Y. V. He"],
+    description: (
+      <>
+        Adapts <span className="text-foreground/80 font-medium">MATRIX</span> to English, French, Polish and Urdu.{" "}
+        <span className="text-foreground/80 font-medium">Emergency handling</span> holds in all four languages, while symptom coverage and follow-up{" "}
+        <span className="text-foreground/80 font-medium">degrade unevenly</span> across models and languages.
+      </>
+    ),
+    tags: ["#Multilingual", "#VoiceAI", "#Safety"],
+    link: "https://openreview.net/forum?id=mfgdFCAplv",
     status: "Published",
   },
   {
     year: "2026",
     venue: "IWSDS 2026",
     title: "WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding",
+    authors: ["Z. Ellis", "J. Joselowitz", "Y. Deo", "Y. He", "A. Kalygina", "A. Higham", "M. Rahimzadeh", "Y. Jia", "I. Habli", "E. Lim"],
     description: (
       <>
         Finds <span className="text-foreground/80 font-medium">WER</span> poorly reflects{" "}
@@ -66,6 +154,7 @@ const PUBLICATIONS: Publication[] = [
     year: "2025",
     venue: "COLM 2025",
     title: "Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning",
+    authors: ["J. Joselowitz", "R. Majumdar", "A. Jagota", "M. Bou", "N. Patel", "S. Krishna", "S. Parbhoo"],
     description: (
       <>
         Understanding how LLM reward models can be reverse-engineered using{" "}
@@ -74,7 +163,7 @@ const PUBLICATIONS: Publication[] = [
       </>
     ),
     tags: ["#RLHF", "#Interpretability", "#LLM"],
-    link: "https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:9yKSN-GCB0IC",
+    link: "https://arxiv.org/abs/2410.12491",
     status: "Published",
     codeLink: "https://github.com/ai4ai-lab/irl_for_llms",
   },
@@ -82,6 +171,7 @@ const PUBLICATIONS: Publication[] = [
     year: "2025",
     venue: "ACL 2025",
     title: "ASTRID — An Automated and Scalable TRIaD for RAG Evaluation",
+    authors: ["Y. V. He", "M. Chowdhury", "J. Joselowitz", "A. Higham", "E. Lim"],
     description: (
       <>
         Framework for evaluating <span className="text-foreground/80 font-medium">retrieval-augmented generation (RAG)</span> systems in clinical QA, focusing on{" "}
@@ -90,13 +180,14 @@ const PUBLICATIONS: Publication[] = [
       </>
     ),
     tags: ["#RAG", "#Healthcare", "#Evaluation"],
-    link: "https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:UeHWp8X0CEIC",
+    link: "https://aclanthology.org/2025.findings-acl.857/",
     status: "Published",
   },
   {
     year: "2025",
     venue: "arXiv",
     title: "MATRIX: Multi-Agent simulaTion fRamework for safe Interactions",
+    authors: ["E. Lim", "Y. V. He", "J. Joselowitz", "K. Preston", "M. Chowdhury", "L. Williams", "A. Higham", "K. Mason", "M. Melo", "T. Lawton", "Y. Jia", "I. Habli"],
     description: (
       <>
         Structured <span className="text-foreground/80 font-medium">multi-agent</span> framework to evaluate{" "}
@@ -107,60 +198,59 @@ const PUBLICATIONS: Publication[] = [
     link: "https://arxiv.org/abs/2508.19163",
     status: "Preprint",
   },
+];
+
+// Older papers, shown as a compact list under the publication cards.
+type EarlierWork = {
+  year: string;
+  venue: string;
+  title: string;
+  link: string;
+};
+
+const EARLIER_WORK: EarlierWork[] = [
   {
     year: "2024",
     venue: "CICE 2024",
     title: "Video Selection for Enjoyable Learning",
-    description: (
-      <>
-        Data-driven approach to <span className="text-foreground/80 font-medium">optimising</span> educational video selection for improved{" "}
-        <span className="text-foreground/80 font-medium">engagement</span> and enjoyment.
-      </>
-    ),
-    tags: ["#Education", "#ML"],
-    link: "https://scholar.google.com/citations?user=1Eh35coAAAAJ",
-    status: "Published",
+    link: "https://doi.org/10.20533/cice.2024.0052",
   },
   {
     year: "2024",
     venue: "ECSM 2024",
     title: "On Presenters and Commenters in YouTube Climate Change Videos",
-    description: (
-      <>
-        Analysing how presenter style and{" "}
-        <span className="text-foreground/80 font-medium">audience interaction</span> influence public engagement with climate change communication.
-      </>
-    ),
-    tags: ["#NLP", "#Climate", "#Social Media"],
     link: "https://papers.academic-conferences.org/index.php/ecsm/article/view/2076",
-    status: "Published",
   },
   {
     year: "2023",
     venue: "E3S Web of Conferences",
     title: "Video Features Predicting Engagement in Climate Change Education",
-    description: (
-      <>
-        Identifying which visual and content features in educational videos drive{" "}
-        <span className="text-foreground/80 font-medium">engagement</span> and retention.
-      </>
-    ),
-    tags: ["#Education", "#Climate"],
-    link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1Eh35coAAAAJ&citation_for_view=1Eh35coAAAAJ:u-x6o8ySG0sC",
-    status: "Published",
+    link: "https://doi.org/10.1051/e3sconf/202343606009",
   },
   {
     year: "2022",
     venue: "CSCL 2022",
     title: "Collaborative Learning in YouTube: Under Which Conditions Can Learning Happen?",
-    description: (
-      <>
-        Studying online <span className="text-foreground/80 font-medium">collaborative learning</span> dynamics to understand when and how digital discussions foster real learning outcomes.
-      </>
-    ),
-    tags: ["#Education", "#Collaboration"],
     link: "https://repository.isls.org/handle/1/8363",
-    status: "Published",
+  },
+];
+
+type Talk = {
+  date: string;
+  venue: string;
+  title: string;
+  description: string;
+  link: string;
+};
+
+const TALKS: Talk[] = [
+  {
+    date: "June 2026",
+    venue: "AI Engineer World's Fair 2026 · San Francisco",
+    title: "Shipping AI to a Million Patients Without an A/B Test",
+    description:
+      "How Ufonia ships and keeps improving a regulated clinical voice agent without A/B testing on patients: simulate the highest-risk scenarios at scale, then improve it with reproducible, auditable prompt optimisation, using simulation as the release gate.",
+    link: "https://youtu.be/McknwOzbmyg",
   },
 ];
 
@@ -194,6 +284,22 @@ const PHOTOS = [
     meta: "ISO 200 • F/5.6 • 1/500s",
   }
 ];
+
+// Venue parts are separated by " · ". On phones each part gets its own line and
+// the separator is hidden, so a long venue never breaks in the middle of a part.
+const VenueLine = ({ venue }: { venue: string }) => {
+  const parts = venue.split(" · ");
+  return (
+    <span className="text-muted-foreground text-sm">
+      {parts.map((part, i) => (
+        <Fragment key={i}>
+          {i > 0 && <span className="hidden sm:inline">{" · "}</span>}
+          <span className="block sm:inline">{part}</span>
+        </Fragment>
+      ))}
+    </span>
+  );
+};
 
 const Index = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -339,16 +445,18 @@ const Index = () => {
           <div className="md:col-span-2">
             <div className="section-border-left space-y-4 sm:space-y-6 text-base sm:text-lg text-muted-foreground">
               <p>
-                I design and study large language models for healthcare applications, with a focus on{" "}
-                <span className="text-foreground">reliability</span>,{" "}
-                <span className="text-foreground">interpretability</span>, and{" "}
-                <span className="text-foreground">safety</span>.
+                I'm an AI research engineer at Ufonia, working on{" "}
+                <span className="text-foreground">safety evaluation</span> for{" "}
+                <span className="text-primary">clinical voice agents</span>. My research covers{" "}
+                <span className="whitespace-nowrap">multi-agent</span> simulation,{" "}
+                <span className="whitespace-nowrap">LLM-as-judge</span> methods validated against clinicians, and
+                how speech recognition errors and patient interruptions affect{" "}
+                <span className="whitespace-nowrap">clinical safety</span>.
               </p>
               <p>
-                My research aims to make AI systems that clinicians can understand and trust — advancing both 
-                performance and accountability. I'm particularly interested in{" "}
-                <span className="text-primary">steerable LLMs</span> that adapt to context while maintaining 
-                alignment with human values.
+                Before Ufonia, I completed an MSc in Applied Machine Learning at Imperial College London, where
+                my thesis used <span className="text-foreground">inverse reinforcement learning</span> to recover
+                the reward models of <span className="whitespace-nowrap">RLHF-trained</span> LLMs.
               </p>
             </div>
           </div>
@@ -377,7 +485,7 @@ const Index = () => {
                 <span className="bg-primary/20 text-primary text-xs px-2 py-1 rounded font-medium">
                   {pub.year}
                 </span>
-                <span className="text-muted-foreground text-sm">{pub.venue}</span>
+                <VenueLine venue={pub.venue} />
                 {pub.status === "Preprint" && (
                   <span className="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-1 rounded font-medium">
                     Preprint
@@ -393,11 +501,22 @@ const Index = () => {
               <h3 className="text-lg font-semibold mb-2 text-foreground">
                 {pub.title}
               </h3>
-              
+
+              <p className="text-muted-foreground text-xs mb-3">
+                {pub.authors.map((author, i) => (
+                  <Fragment key={i}>
+                    {i > 0 && ", "}
+                    <span className={author === ME ? "text-foreground font-medium whitespace-nowrap" : "whitespace-nowrap"}>
+                      {author}
+                    </span>
+                  </Fragment>
+                ))}
+              </p>
+
               <p className="text-muted-foreground text-sm mb-4">
                 {pub.description}
               </p>
-              
+
               <div className="flex items-center justify-between flex-wrap gap-3">
                 <div className="flex gap-2 flex-wrap">
                   {pub.tags.map((tag, i) => (
@@ -460,12 +579,111 @@ const Index = () => {
             </div>
           ))}
         </div>
+
+        {/* Earlier work: compact list, no descriptions */}
+        <div className="mt-10 sm:mt-12">
+          <h3 className="text-muted-foreground text-sm mb-3">Earlier work</h3>
+          <ul className="bg-card/50 border border-border/50 rounded-lg px-4 sm:px-6 py-1 divide-y divide-border/50">
+            {EARLIER_WORK.map((item) => (
+              <li key={item.title}>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 sm:gap-4 py-3.5"
+                >
+                  <span className="bg-primary/20 text-primary text-xs px-2 py-1 rounded font-medium shrink-0">
+                    {item.year}
+                  </span>
+                  <span className="flex-1 min-w-0">
+                    <span className="block text-sm text-foreground/90 transition-colors duration-200 group-hover:text-primary">
+                      {item.title}
+                    </span>
+                    <span className="block text-xs text-muted-foreground mt-1">{item.venue}</span>
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="shrink-0 mt-1 text-muted-foreground transition-colors duration-200 group-hover:text-primary"
+                  >
+                    <path d="M7 17l9-9" />
+                    <path d="M10 8h6v6" />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Talks Section */}
+      <section id="talks" className="px-4 sm:px-8 pt-8 sm:pt-12 pb-8 sm:pb-12 max-w-4xl mx-auto">
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+          <span className="text-primary font-medium text-sm sm:text-base">03.</span>
+          <h2 className="text-2xl sm:text-3xl font-bold">Talks</h2>
+          <div className="flex-1 h-px bg-border ml-2 sm:ml-4"></div>
+        </div>
+
+        <div className="space-y-6">
+          {TALKS.map((talk, index) => (
+            <div key={index} className="publication-card">
+              <div className="flex items-center gap-3 mb-3 flex-wrap">
+                <span className="text-lg">🎤</span>
+                <span className="bg-primary/20 text-primary text-xs px-2 py-1 rounded font-medium">
+                  {talk.date}
+                </span>
+                <VenueLine venue={talk.venue} />
+              </div>
+
+              <h3 className="text-lg font-semibold mb-2 text-foreground">
+                {talk.title}
+              </h3>
+
+              <p className="text-muted-foreground text-sm mb-4">
+                {talk.description}
+              </p>
+
+              <div className="flex items-center justify-end">
+                <a
+                  href={talk.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkButtonClass}
+                >
+                  <span>Watch Talk</span>
+                  <svg
+                    aria-hidden="true"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-colors duration-200"
+                  >
+                    <path d="M7 17l9-9" />
+                    <path d="M10 8h6v6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Photography Section */}
       <section id="photography" className="px-4 sm:px-8 pt-8 sm:pt-12 pb-16 sm:pb-24 max-w-5xl mx-auto">
         <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-          <span className="text-primary font-medium text-sm sm:text-base">03.</span>
+          <span className="text-primary font-medium text-sm sm:text-base">04.</span>
           <h2 className="text-2xl sm:text-3xl font-bold">Photography</h2>
           <div className="flex-1 h-px bg-border ml-2 sm:ml-4"></div>
         </div>
