@@ -1,11 +1,11 @@
 # Jared Joselowitz
-- Role: Senior AI Research Engineer
+- Role: Lead AI Research Engineer
 - Focus: LLMs, Healthcare, Safety, Steerability, Inverse Reinforcement Learning (IRL)
 - Education: MSc Applied Machine Learning (Distinction), Imperial College London
 - Website: https://jossy.co.za/
 
 ## Bio
-Senior AI Research Engineer (MSc, Imperial College London) designing safe and steerable LLMs for healthcare. Specializes in using Inverse Reinforcement Learning (IRL) to extract reward models and evaluating clinical RAG systems. Currently building automated postoperative follow-up systems at Ufonia.
+Lead AI Research Engineer at Ufonia (MSc, Imperial College London) working on safety evaluation of clinical LLM voice agents: multi-agent simulation, LLM-as-judge methods and ASR robustness. Earlier work used Inverse Reinforcement Learning (IRL) to extract reward models from RLHF-tuned LLMs.
 
 ## Technical Skills
 - Frameworks: PyTorch, TensorFlow, Hugging Face (TRL, Transformers), LangChain, DSPy, LLM Optimizers (GEPA, MIPROV2, BootstrapFewShot).
@@ -13,16 +13,33 @@ Senior AI Research Engineer (MSc, Imperial College London) designing safe and st
 - Core Concepts: RLHF, SFT, Reward Modeling, RAG, Computer Vision, Inverse RL.
 
 ## Key Links
-- [CV (PDF)](https://jossy.co.za/cv.pdf)
+- [CV (PDF)](https://jossy.co.za/research_cv.pdf)
 - [GitHub](https://github.com/JaredJoss)
 - [Google Scholar](https://scholar.google.com/citations?user=1Eh35coAAAAJ&hl=en)
 - [LinkedIn](https://www.linkedin.com/in/jaredjoselowitz/)
 
 ## Selected Research (LLMs & Healthcare)
+- **From Text to Voice (RTCA Workshop @ NeurIPS 2026, Oral)**: Replays the same clinical interruption in text and through a live cascaded voice pipeline, and finds that one or two words committed after the patient starts speaking can flip the safety verdict.
+  - Link: https://openreview.net/forum?id=ez6dvTCMby
+- **Does the Voice Matter? (ML4H 2026 Proceedings; GenAI4Health Workshop @ NeurIPS 2026)**: Tests per-turn frustration detection on real calls from a deployed clinical voice agent. About 59% of patient turns are one or two words, where transcript-only detection does not exclude chance, and whether audio helps depends on the model and the instruction.
+  - Link: https://arxiv.org/abs/2611.21001
+- **Same Eye, Different Scanner (VLM4RWD Workshop @ NeurIPS 2026)**: Benchmarks whether frontier VLMs and OCT foundation models keep the same glaucoma decision for the same eye when the scanner changes, scoring decision flips, sensitivity change and calibration.
+  - Link: https://openreview.net/forum?id=1I9Pfkv8dY
+- **The Camera, the Split, and the Label (TAE Workshop @ NeurIPS 2026)**: Audits glaucoma-progression results on the public GRAPE benchmark with three checks: a device-only baseline, a patient-grouped split and an input-label overlap test. At this sample size, none of the reported numbers can be distinguished from a trivial baseline.
+  - Link: https://openreview.net/forum?id=AJbpzv4COc
+- **When Patients Cut In (EMNLP 2026 Findings; oral at DAIH Workshop @ COLM 2026)**: Evaluates whether clinical voice agents can recover when patients interrupt mid-utterance, using conversation-analytic interruption categories and LLM judges to score recovery against required clinical content.
+  - Link: https://aclanthology.org/2026.findings-emnlp.2456/
+- **When the Language Changes, Is It Still Safe? (DAIH Workshop @ COLM 2026)**: Adapts MATRIX to English, French, Polish and Urdu. Emergency handling holds in all four languages, while symptom coverage and follow-up degrade unevenly across models and languages.
+  - Link: https://openreview.net/forum?id=mfgdFCAplv
+- **WER is Unaware (IWSDS 2026, Oral)**: Finds WER poorly reflects clinical risk from ASR errors and proposes an LLM judge matching clinician safety assessments.
+  - Link: https://aclanthology.org/2026.iwsds-1.39/
+  - Code: https://github.com/Ufonia/wer-is-unaware
+- **MATRIX (arXiv preprint, 2025)**: Structured multi-agent framework to evaluate safety and behaviour risks in clinical dialogue agents at scale.
+  - Link: https://arxiv.org/abs/2508.19163
 - **Insights from the Inverse (COLM 2025)**: Reconstructing LLM training goals through Inverse RL. Achieved 80.4% accuracy in reward model extraction.
-  - Link: https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:9yKSN-GCB0IC
+  - Link: https://arxiv.org/abs/2410.12491
 - **ASTRID (ACL 2025)**: Automated evaluation framework for RAG-based Clinical Question Answering systems.
-  - Link: https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:UeHWp8X0CEIC
+  - Link: https://aclanthology.org/2025.findings-acl.857/
 
 ## Previous Research (Social Computing)
 - **Video Selection for Enjoyable Learning (CICE 2024)**

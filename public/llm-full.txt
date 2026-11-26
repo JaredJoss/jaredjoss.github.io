@@ -10,7 +10,7 @@ I am an AI Research Engineer with an MSc in Applied Machine Learning (Distinctio
   - Top 5 in 3rd year; 1st place in 4th year (Entelect Prize).
 
 ## Work Experience
-- **Senior AI Research Engineer @ Ufonia** (London, 2025-Present)
+- **Lead AI Research Engineer @ Ufonia** (London, 2025-Present; promoted from Senior in April 2026)
   - Developing LLM-based conversational systems for automated postoperative follow-up.
   - Benchmarking multilingual LLMs and improving evaluation pipelines for clinical safety.
 - **Junior Data Scientist @ The Awareness Company** (South Africa, 2022-2023)
@@ -20,25 +20,71 @@ I am an AI Research Engineer with an MSc in Applied Machine Learning (Distinctio
 
 ### Primary Research: LLM Safety & Healthcare
 
-**1. Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning**
+**1. From Text to Voice: How Real-Time Pipelines Change Interruption Recovery in Cascaded Clinical Agents**
+- **Venue:** RTCA Workshop @ NeurIPS 2026 (Oral)
+- **Summary:** Replays the same clinical interruption in text and through a live cascaded voice pipeline, and finds that one or two words committed after the patient starts speaking can flip the safety verdict.
+- **Link:** https://openreview.net/forum?id=ez6dvTCMby
+
+**2. Does the Voice Matter? Evaluating Frustration Detection on Deployed Clinical Voice-Agent Calls**
+- **Venue:** ML4H 2026 (Proceedings); also at the GenAI4Health Workshop @ NeurIPS 2026
+- **Summary:** Tests per-turn frustration detection on real calls from a deployed clinical voice agent. About 59% of patient turns are one or two words, where transcript-only detection does not exclude chance, and whether audio helps depends on the model and the instruction.
+- **Link:** https://arxiv.org/abs/2611.21001
+
+**3. Same Eye, Different Scanner: A Decision-Reliability Benchmark for Frontier VLMs and OCT Foundation Models in Glaucoma**
+- **Venue:** VLM4RWD Workshop @ NeurIPS 2026
+- **Summary:** Benchmarks whether frontier VLMs and OCT foundation models keep the same glaucoma decision for the same eye when the scanner changes, scoring decision flips, sensitivity change and calibration.
+- **Link:** https://openreview.net/forum?id=1I9Pfkv8dY
+
+**4. The Camera, the Split, and the Label: A Three-Check Audit of Glaucoma-Progression Prediction**
+- **Venue:** TAE Workshop @ NeurIPS 2026
+- **Summary:** Audits glaucoma-progression results on the public GRAPE benchmark with three checks: a device-only baseline, a patient-grouped split and an input-label overlap test. At this sample size, none of the reported numbers can be distinguished from a trivial baseline.
+- **Link:** https://openreview.net/forum?id=AJbpzv4COc
+
+**5. When Patients Cut In: Extending Clinical Conversational AI Safety to Interruptions**
+- **Venue:** EMNLP 2026 Findings; oral at the DAIH Workshop @ COLM 2026
+- **Summary:** Evaluates whether clinical voice agents can recover when patients interrupt mid-utterance, using conversation-analytic interruption categories and LLM judges to score recovery against required clinical content.
+- **Link:** https://aclanthology.org/2026.findings-emnlp.2456/
+
+**6. When the Language Changes, Is It Still Safe? Multilingual Evaluation of Clinical Voice Agents**
+- **Venue:** DAIH Workshop @ COLM 2026
+- **Summary:** Adapts MATRIX to English, French, Polish and Urdu. Emergency handling holds in all four languages, while symptom coverage and follow-up degrade unevenly across models and languages.
+- **Link:** https://openreview.net/forum?id=mfgdFCAplv
+
+**7. WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding in Patient Facing Dialogue**
+- **Venue:** IWSDS 2026 (Oral)
+- **Summary:** Finds WER poorly reflects clinical risk from ASR errors and proposes an LLM judge matching clinician safety assessments.
+- **Link:** https://aclanthology.org/2026.iwsds-1.39/
+- **Code:** https://github.com/Ufonia/wer-is-unaware
+
+**8. MATRIX: Multi-Agent simulaTion fRamework for safe Interactions and conteXtual clinical conversational evaluation**
+- **Venue:** arXiv preprint (2025)
+- **Summary:** Structured multi-agent framework to evaluate safety and behaviour risks in clinical dialogue agents at scale.
+- **Link:** https://arxiv.org/abs/2508.19163
+
+**9. Insights from the Inverse: Reconstructing LLM Training Goals Through Inverse Reinforcement Learning**
 - **Venue:** COLM 2025
 - **Tech Stack:** TRL, Hugging Face, Pythia (70M/410M), RLHF.
 - **Key Findings:** Developed a max-margin Inverse Reinforcement Learning (IRL) algorithm to extract reward models from fine-tuned LLMs.
   - The algorithm achieved **80.40% accuracy** in recovering the ground-truth objective.
   - Demonstrated that fine-tuning with the extracted IRL reward model resulted in **lower toxicity** than the original RLHF process.
-- **Link:** https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:9yKSN-GCB0IC
+- **Link:** https://arxiv.org/abs/2410.12491
 
-**2. ASTRID — An Automated and Scalable TRIaD for the Evaluation of RAG-based Clinical Question Answering Systems**
+**10. ASTRID — An Automated and Scalable TRIaD for the Evaluation of RAG-based Clinical Question Answering Systems**
 - **Venue:** ACL 2025
 - **Focus:** RAG Evaluation, Clinical QA, Reliability.
 - **Summary:** A framework designed to evaluate Retrieval-Augmented Generation systems in clinical settings, focusing on safety, reliability, and scalability.
-- **Link:** https://scholar.google.com/citations?view_op=view_citation&citation_for_view=1Eh35coAAAAJ:UeHWp8X0CEIC
+- **Link:** https://aclanthology.org/2025.findings-acl.857/
 
 ### Previous Research: Multimedia & Education
 - **Video Selection for Enjoyable Learning** (CICE 2024)
 - **On Presenters and Commenters in YouTube Climate Change Videos** (ECSM 2024)
 - **Video Features Predicting Engagement in Climate Change Education** (E3S 2023)
 - **Collaborative Learning in YouTube** (CSCL 2022)
+
+## Talks
+- **Shipping AI to a Million Patients Without an A/B Test** | AI Engineer World's Fair 2026, San Francisco (June 2026)
+  - How Ufonia ships and keeps improving a regulated clinical voice agent without A/B testing on patients: simulate the highest-risk scenarios at scale, then improve it with reproducible, auditable prompt optimisation, using simulation as the release gate.
+  - Link: https://youtu.be/McknwOzbmyg
 
 ## Contact Information
 - **Email:** jaredjoss123@gmail.com
