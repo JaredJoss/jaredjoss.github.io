@@ -6,6 +6,7 @@ import ScrambleText from "@/components/ScrambleText";
 import CyclingScrambleText from "@/components/CyclingScrambleText";
 import NoLightModePopup from "@/components/NoLightModePopup";
 import CursorTrail from "@/components/CursorTrail";
+import PhotoCollage, { type Photo } from "@/components/PhotoCollage";
 
 const TITLES = [
   "research engineer", 
@@ -254,35 +255,25 @@ const TALKS: Talk[] = [
   },
 ];
 
-// To add your own photos:
-// 1. Create folder: public/photos/
-// 2. Add your images there
-// 3. Update the src paths below to "/photos/your-image.jpg"
-const PHOTOS = [
-  {
-    src: "/photos/zebra.jpeg",  // Replace with your actual photo path
-    meta: "ISO 400 • F/2.8 • 1/1000s",  // Update with your actual camera settings
-  },
-  {
-    src: "/photos/malachite_kingfisher.jpeg",
-    meta: "ISO 800 • F/4.0 • 1/2000s",
-  },
-  {
-    src: "/photos/lion.jpeg",
-    meta: "ISO 200 • F/5.6 • 1/500s",
-  },
-  {
-    src: "/photos/baby_baboon.jpeg",
-    meta: "ISO 100 • F/8.0 • 1/250s",
-  },
-  {
-    src: "/photos/crocodile.jpeg",
-    meta: "ISO 200 • F/5.6 • 1/500s",
-  },
-  {
-    src: "/photos/leopard.jpeg",
-    meta: "ISO 200 • F/5.6 • 1/500s",
-  }
+// Each photo needs public/photos/<file>.jpeg (full size, opened on click) and an
+// 800px copy at public/photos/grid/<file>.jpg. width/height are the grid copy's
+// pixel size. Order is the order shown; alternate colour and tone so similar
+// shots don't sit together. Add `settings` only with the photo's real camera settings.
+const PHOTOS: Photo[] = [
+  { file: "lion", width: 800, height: 770, caption: "lion" },
+  { file: "zebra", width: 800, height: 532, caption: "zebras" },
+  { file: "storks", width: 532, height: 800, caption: "storks" },
+  { file: "wild_dog_yawn", width: 800, height: 531, caption: "african wild dog" },
+  { file: "malachite_kingfisher", width: 800, height: 533, caption: "malachite kingfisher" },
+  { file: "leopard", width: 800, height: 633, caption: "leopard" },
+  { file: "elephant", width: 800, height: 532, caption: "elephant" },
+  { file: "sunset", width: 600, height: 800, caption: "sunset" },
+  { file: "crocodile", width: 800, height: 531, caption: "crocodile" },
+  { file: "baby_baboon", width: 800, height: 531, caption: "young baboon" },
+  { file: "leopard_walking", width: 800, height: 531, caption: "leopard" },
+  { file: "pied_kingfisher", width: 800, height: 531, caption: "pied kingfisher" },
+  { file: "wild_dog_road", width: 800, height: 531, caption: "african wild dog" },
+  { file: "camera_sunset", width: 600, height: 800, caption: "camera at sunset" },
 ];
 
 // Venue parts are separated by " · ". On phones each part gets its own line and
@@ -697,19 +688,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {PHOTOS.map((photo, index) => (
-            <div key={index} className="photo-card group">
-              <img 
-                src={photo.src} 
-                className="w-full h-64 sm:h-80 object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <p className="text-primary text-sm">{photo.meta}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <PhotoCollage photos={PHOTOS} />
       </section>
     </div>
   );
