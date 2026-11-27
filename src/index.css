@@ -159,17 +159,39 @@
   @apply border-border/50 bg-card/80;
 }
 
-/* Photo card */
-.photo-card {
-  @apply relative overflow-hidden rounded-lg;
+/* Photo collage: hovering dims the other photos and names the one under the cursor */
+.collage-tile img {
+  transition: transform 0.6s ease, filter 0.4s ease;
 }
 
-.photo-card img {
-  @apply transition-transform duration-500;
+.collage:hover .collage-tile img {
+  filter: brightness(0.72);
 }
 
-.photo-card:hover img {
-  @apply scale-105;
+.collage .collage-tile:hover img,
+.collage .collage-tile:focus-visible img {
+  filter: none;
+  transform: scale(1.03);
+}
+
+.collage-caption {
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.9);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.collage-tile:hover .collage-caption,
+.collage-tile:focus-visible .collage-caption {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collage-tile img,
+  .collage-caption {
+    transition: none;
+  }
 }
 
 /* Mobile optimizations */
